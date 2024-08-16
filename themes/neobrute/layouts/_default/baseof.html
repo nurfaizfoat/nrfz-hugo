@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+  {{ partial "htmlhead" . }}
+</head>
+
+<body>
+  {{ partial "header" . }}
+  <div class="container is-widescreen">
+    <h1>Empowering Founders to Create Impactful Products Experiences</h1>
+    <div class="notification is-primary">
+      This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+    </div>
+  </div>
+  
+
+  {{ if site.Params.footer }}
+    {{ partial "footer" . }}
+  {{ end }}
+
+  {{ template "_internal/google_analytics.html" . }}
+</body>
+
+</html>

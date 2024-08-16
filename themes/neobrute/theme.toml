@@ -1,0 +1,10 @@
+name = "neobrute"
+license = "MIT"
+description = "Neobrutal Portfolio Theme based on Bulma V1"
+tags = ["responsive", "clean", "documentation", "docs", "flexbox", "search", "mobile"]
+features = []
+
+
+[author]
+  name = "Nurfaiz Foat"
+  homepage = "https://github.com/nurfaizfoat/"

@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- template "_internal/opengraph.html" . -}}
+
+<title>{{ .Page.Title }} | {{ .Site.Title -}}</title>
+<link rel="icon" href="{{ "../images/favicon.ico" | relURL }}" type="image/x-icon">
+
+<!-- Custom Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+
+{{- $options := (dict "outputStyle" "compressed") }}  
+{{- $bulmaCss := resources.Get "bulma_v1/bulma.css" }}   <!-- Include the Bulma CSS -->  
+{{- $overridesScss := resources.Get "_overrides.scss" }} <!-- Include the SCSS overrides -->  
+
+{{- if .Site.Params.postcss }}  
+    {{- $bulma := $bulmaCss | postCSS | resources.Minify | resources.PostProcess }}  
+    <link rel="stylesheet" type="text/css" href="{{ $bulma.RelPermalink }}">  
+{{- else }}  
+    {{- $bulma := $bulmaCss | resources.Minify }}  
+    <link rel="stylesheet" type="text/css" href="{{ $bulma.RelPermalink }}">  
+{{- end }}  
+
+{{- $overrides := $overridesScss | resources.ExecuteAsTemplate "_overrides.scss" . | resources.ToCSS $options | resources.Minify }}  
+<link rel="stylesheet" type="text/css" href="{{ $overrides.RelPermalink }}">
+
+{{ $navscript := resources.Get "js/navbar.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $navscript.RelPermalink }}"></script>
+
+{{- template "_internal/google_analytics.html" . -}}
+
+<!-- RSS -->
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+{{ if .Site.Params.enableSearch }}
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+{{ end }}
+
+{{ partial "css" . }}
