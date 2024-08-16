@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
 
 {{- $options := (dict "outputStyle" "compressed") }}  
-{{- $bulmaCss := resources.Get "bulma_v1/bulma.css" }}   <!-- Include the Bulma CSS -->  
+{{- $bulmaCss := resources.Get "bulma_v1/bulma.css" }}   <!-- Include the Bulma v1 CSS -->  
 {{- $overridesScss := resources.Get "_overrides.scss" }} <!-- Include the SCSS overrides -->  
 
 {{- if .Site.Params.postcss }}  
