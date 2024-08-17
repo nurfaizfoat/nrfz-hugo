@@ -40,12 +40,13 @@ img {
   text-decoration: none;  
   transition: all 0.2s ease-out; // Transition for button  
   justify-content: center;  
-  padding-bottom: calc(.5em - 1px);  
-  padding-left: 1em;  
-  padding-right: 1em;  
-  padding-top: calc(.5em - 1px);  
+  padding-bottom: calc(.8em - 1px);  
+  padding-left: 1.5em;  
+  padding-right: 1.5em;  
+  padding-top: calc(.8em - 1px);  
   text-align: center;  
-  white-space: nowrap;  
+  white-space: nowrap;
+
 
   &:hover { // Hover effect for button-primary  
       background: white;  
@@ -70,5 +71,22 @@ a {
 a.navbar-item:hover {
   background-color: transparent;
   color: inherit;
-  transform: scale(1.1);
+  transform: scale(1.01);
+}
+
+.avatar {
+  width: auto;
+  padding: 0;
+  border:2px solid black;
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+}
+
+.separator-bar {
+  position: absolute;
+  width: 200px;
+  height: 0px;
+  opacity: 1;
+  border-top: 3px solid #000000;
 }

@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/853ec27dae.js" crossorigin="anonymous"></script>
 
 {{- $options := (dict "outputStyle" "compressed") }}  
 {{- $bulmaCss := resources.Get "bulma_v1/bulma.css" }}   <!-- Include the Bulma v1 CSS -->  
@@ -25,8 +26,8 @@
 {{- $overrides := $overridesScss | resources.ExecuteAsTemplate "_overrides.scss" . | resources.ToCSS $options | resources.Minify }}  
 <link rel="stylesheet" type="text/css" href="{{ $overrides.RelPermalink }}">
 
-{{ $navscript := resources.Get "js/navbar.js" | resources.Minify | resources.Fingerprint }}
-<script src="{{ $navscript.RelPermalink }}"></script>
+{{ $swapAvatar := resources.Get "js/swapAvatar.js" | resources.Minify | resources.Fingerprint }}  
+<script src="{{ $swapAvatar.RelPermalink }}" defer></script>
 
 {{- template "_internal/google_analytics.html" . -}}
 
@@ -34,10 +35,5 @@
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
-
-{{ if .Site.Params.enableSearch }}
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/lunr/lunr.js"></script>
-{{ end }}
 
 {{ partial "css" . }}
