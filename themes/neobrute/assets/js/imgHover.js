@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {  
-    const img = document.getElementById('hoverImage'); // Make sure this ID matches your image  
+    const img = document.getElementById('imgHover'); // Make sure this ID matches your image  
 
     img.addEventListener('mouseover', () => {  
         img.src = './images/nrfz_avatar.gif'; // Change to GIF  

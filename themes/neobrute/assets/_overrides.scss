@@ -90,3 +90,13 @@ a.navbar-item:hover {
   opacity: 1;
   border-top: 3px solid #000000;
 }
+
+.hoverable-image {  
+  filter: grayscale(100%); // Apply grayscale filter for initial state  
+  transition: filter 0.2s ease-out; // Smooth transition for filter effect  
+
+  // On hover, remove the grayscale filter  
+  &:hover {  
+      filter: grayscale(0%); // Restore original color  
+  }  
+}
