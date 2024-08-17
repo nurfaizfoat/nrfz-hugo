@@ -1,3 +1,2 @@
-[submodule "themes/bulla"]
-	path = themes/bulla
-	url = https://github.com/todinov/bulla
+[submodule "themes/neobrute"]
+	path = themes/neobrute
