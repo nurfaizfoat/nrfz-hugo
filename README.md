@@ -14,7 +14,7 @@ Just deploy and serve it in any type of solution you have in mind! [Hugo Deploym
 
 ## Screenshots
 
-![Landing Page](https://ibb.co/56bcBc8)
+![Landing Page](https://i.ibb.co/56bcBc8/Screenshot-from-2024-08-19-23-13-47.png)
 
 ## What's next?
 
