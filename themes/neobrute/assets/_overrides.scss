@@ -92,11 +92,12 @@ a.navbar-item:hover {
 }
 
 .hoverable-image {  
-  filter: grayscale(100%); // Apply grayscale filter for initial state  
-  transition: filter 0.2s ease-out; // Smooth transition for filter effect  
+  filter: grayscale(100%) brightness(0); /* Makes the SVG appear black */  
+  transition: all 0.3s ease; /* Smooth transition for the filter effect */ 
 
   // On hover, remove the grayscale filter  
   &:hover {  
-      filter: grayscale(0%); // Restore original color  
+      filter: none;
+      transform: scale(1.05);
   }  
 }
