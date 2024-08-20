@@ -1,54 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="{{ if eq .Layout "supahands_case_study" }}is-global-dark-bg{{ else }}default{{ end }}">
 
 <head>
   {{ partial "htmlhead" . }}
 </head>
 
-<body>
-  {{ partial "header" . }}
-  <div class="container is-widescreen mt-6">
-    <h1 class="is-hero-title sawarabi-mincho-regular">Empowering Founders to Create Impactful Products Experiences</h1>
-  </div>
-  <div class="container is-widescreen mt-6">
-    <div class="columns is-multiline is-mobile">
-      <div class="column is-1">
-        <img id="imgHover" src="./images/nrfz_avatar.png" class="avatar" alt="Nurfaiz Foat Photo">  
-      </div>
-      <div class="column">
-        <h4 class="is-size-4 sawarabi-mincho-regular">Senior Product Designer</h4>
-        <h6 class="is-size-6">Based in Malaysia, I focus on designing what matters to stakeholders</h6>
-        <h6 class="is-size-6">and delivering the best results for businesses.</h6>
-      </div>
-    </div>
-  </div>
-  <div class="container is-widescreen mt-5">
-    <div class="columns is-multiline is-mobile">
-      <div class="column is-2">
-        <div class="separator-bar"></div>
-      </div>
-      <div class="column">
-      </div>
-    </div>
-  </div>
-  <div class="container is-widescreen mt-6">
-    <div class="columns is-multiline is-mobile">
-      <div class="column">
-        <h4 class="is-size-4 sawarabi-mincho-regular">Selected work</h4>
-      </div>
-    </div>
-  </div>
-  <div class="container is-widescreen mt-3">
-    <div class="columns is-mobile">
-      <div class="column"><img id="lelongLogo" src="./images/lelong_logo_hover.svg?" class="hoverable-image is-borderless" alt="Lelong Logo"> </div>
-      <div class="column"><img class="is-borderless hoverable-image" src="../images/supahands_logo_hover.svg?" alt="Supahands Logo">  </div>
-      <div class="column"><img class="is-borderless hoverable-image" src="../images/ookyobymaxis_logo_hover.svg?" alt="Ookyo by Maxis Logo">  </div>
-      <div class="column"><img class="is-borderless hoverable-image" src="../images/invoke_logo_hover.svg?" alt="INVOKE is Data Logo">  </div>
-      <div class="column"><img class="is-borderless hoverable-image" src="../images/maideasy_logo_hover.svg?" alt="Maideasy Logo">  </div>
-    </div>
-  </div>
+<body class="{{ if eq .Type "supahands_case_study" }}case-study-body{{ end }}">
+  {{ if eq .Type "supahands_case_study" }}
+    {{ partial "header_case_study" . }}
+  {{ else }}
+    {{ partial "header" . }}
+  {{ end }}
+
+  <!-- Debugging output -->
+  <!-- <div>Page Type: {{ .Type }}</div>
+  <div>Page Layout: {{ .Layout }}</div>
+  <div>Baseof.html is rendering!</div> -->
   
-  
+  <!-- Main content block -->
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
 
   {{ if site.Params.footer }}
     {{ partial "footer" . }}

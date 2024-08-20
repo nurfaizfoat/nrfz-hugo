@@ -3,6 +3,7 @@ license = "MIT"
 description = "Neobrutal Portfolio Theme based on Bulma V1"
 tags = ["responsive", "clean", "documentation", "docs", "flexbox", "search", "mobile"]
 features = []
+homepage = "index"
 
 
 [author]

@@ -5,12 +5,6 @@
 <title>{{ .Page.Title }} | {{ .Site.Title -}}</title>
 <link rel="icon" href="{{ "../images/favicon.ico" | relURL }}" type="image/x-icon">
 
-<!-- Custom Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/853ec27dae.js" crossorigin="anonymous"></script>
-
 {{- $options := (dict "outputStyle" "compressed") }}  
 {{- $bulmaCss := resources.Get "bulma_v1/bulma.css" }}   <!-- Include the Bulma v1 CSS -->  
 {{- $overridesScss := resources.Get "_overrides.scss" }} <!-- Include the SCSS overrides -->  
