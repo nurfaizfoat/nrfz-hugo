@@ -1,164 +1,167 @@
-/* General Styles */
+// Variables
+$font-primary: "Public Sans", sans-serif;
+$font-secondary: "Sawarabi Mincho", serif;
+$color-background: #FFF8EE;
+$color-dark-bg: #2F2F2F;
+$color-white: #fff;
+$color-black: #000;
+$color-border: #ccc;
 
-/* Base styles for the html element */
+// Mixins
+@mixin button-styles {
+  border-radius: 1px;
+  font-size: 16px;
+  margin-bottom: .5rem;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+  justify-content: center;
+  padding: calc(.8em - 1px) 1.5em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@mixin hover-transform {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// General Styles
 html {
-  font-family: "Public Sans", sans-serif;
-  background-color: #FFF8EE; /* Default background color */
+  font-family: $font-primary;
+  background-color: $color-background;
+
+  &.is-global-dark-bg {
+    background-color: $color-dark-bg;
+  }
 }
 
-/* Base styles for img */
-img {
-  padding: 5px;
-  border: 1px solid #ccc;
-}
-
-/* Utility classes */
+// Utility classes
 .is-borderless { 
-border: 0;
+  border: 0;
 }
 
 .pale-yellow-bg {
-background-color: #FFF8EE; /* Pale yellow background */
+  background-color: $color-background;
 }
 
 .is-dark-bg {
-background-color: #2F2F2F; /* Dark grey background */
+  background-color: $color-dark-bg;
 }
 
-/* Page-Specific Styles */
-
-/* Styles for pages with a global dark background */
-html.is-global-dark-bg {
-  background-color: #2F2F2F; /* Dark grey background for specific pages */
+// Custom drop shadow class
+.has-shadow {
+  box-shadow: 4px 6px 13px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 4px 6px 13px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 6px 13px 0px rgba(0,0,0,0.75);
 }
 
-/* Styles for pages with case-study body */
-.case-study-body {  
-  background-color: #2F2F2F; /* Dark grey background for case study pages */
-  
-  /* Navbar styles specific to case-study pages */
-  .navbar {  
-      background-color: #2F2F2F; /* Darker navbar background */  
-
-      .navbar-item {  
-          color: #fff; /* White text for navbar items */  
-
-          &:hover {  
-              color: #FFFFFF; /* Gold color on hover */  
-          }  
-      }
-      .button-primary {  
-        -webkit-border-radius: 1px;  
-        -moz-border-radius: 1px;  
-        border-radius: 1px;  
-        color: black;  
-        font-size: 16px;  
-        background: white;  
-        margin-bottom: .5rem;  
-        border: solid white 1px;  
-        text-decoration: none;  
-        transition: all 0.2s ease-out; /* Smooth transition for button */  
-        justify-content: center;  
-        padding: calc(.8em - 1px) 1.5em;  
-        text-align: center;  
-        white-space: nowrap;
-      
-        &:hover { /* Hover effect for button-primary */  
-            background: black;  
-            text-decoration: none;  
-            color: white;  
-            border: solid white 1px;  
-            box-shadow: 5px 5px 0px 0px black;  
-        }  
-      }   
-  }  
-}
-
-/* Specific title styles */
+// Typography
 .is-hero-title {
   font-size: 6rem !important;
   line-height: 6.5rem;
   letter-spacing: 0em;
 }
 
-/* Font styles */
+.is-white-title {
+  color: $color-white;
+}
+
 .sawarabi-mincho-regular {
-  font-family: "Sawarabi Mincho", serif;
+  font-family: $font-secondary;
   font-weight: 400;
   font-style: normal;
 }
 
-/* Button styles */
-.button-primary {  
-  -webkit-border-radius: 1px;  
-  -moz-border-radius: 1px;  
-  border-radius: 1px;  
-  color: white;  
-  font-size: 16px;  
-  background: black;  
-  margin-bottom: .5rem;  
-  border: solid #000000 1px;  
-  text-decoration: none;  
-  transition: all 0.2s ease-out; /* Smooth transition for button */  
-  justify-content: center;  
-  padding: calc(.8em - 1px) 1.5em;  
-  text-align: center;  
-  white-space: nowrap;
+// Components
+.button-primary {
+  @include button-styles;
+  color: $color-white;
+  background: $color-black;
+  border: solid $color-black 1px;
 
-  &:hover { /* Hover effect for button-primary */  
-      background: white;  
-      text-decoration: none;  
-      color: black;  
-      border: solid #000000 1px;  
-      box-shadow: 5px 5px 0px 0px #000000;  
-  }  
-}  
-
-/* Link styles */
-a {  
-  text-decoration: none;  
-  transition: all 0.15s ease-out; /* Smooth transition for links */  
-
-  &:hover { /* Hover effect for links */  
-      background-color: transparent;
-      text-decoration: underline; /* Underline on hover */  
-      font-weight: bold; /* Bold text on hover */  
-  }  
-} 
-
-/* Navbar item link styles */
-a.navbar-item {
   &:hover {
-      background-color: transparent;
-      color: inherit;
-      transform: scale(1.01); /* Slightly scale up on hover */
+    background: $color-white;
+    color: $color-black;
+    border-color: $color-black;
+    box-shadow: 5px 5px 0px 0px $color-black;
   }
 }
 
-/* Avatar image styles */
+a {
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  &.navbar-item:hover {
+    background-color: transparent;
+    color: inherit;
+    transform: scale(1.01);
+  }
+}
+
 .avatar {
   width: auto;
   padding: 0;
-  border: 2px solid black;
+  border: 2px solid $color-black;
   border-radius: 5rem;
 }
 
-/* Separator bar styles */
 .separator-bar {
   position: absolute;
   width: 200px;
   height: 0px;
   opacity: 1;
-  border-top: 3px solid #000000;
+  border-top: 3px solid $color-black;
 }
 
-/* Hover effect for images */
-.hoverable-image {  
-  filter: grayscale(100%) brightness(0); /* Grayscale effect on images */  
-  transition: all 0.3s ease; /* Smooth transition for hover effect */ 
+.hoverable-image {
+  filter: grayscale(100%) brightness(0);
+  @include hover-transform;
 
-  &:hover {  
-      filter: none;
-      transform: scale(1.05); /* Slightly scale up on hover */
-  }  
+  &:hover {
+    filter: none;
+  }
+}
+
+.is-white-line {
+  width: 200px; 
+  border: 1.5px solid $color-white; /* Updated border width */
+}
+
+// Page-Specific Styles
+.case-study-body {
+  background-color: $color-dark-bg;
+
+  .navbar {
+    background-color: $color-dark-bg;
+
+    .navbar-item {
+      color: $color-white;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+
+    .button-primary {
+      @include button-styles;
+      color: $color-black;
+      background: $color-white;
+      border: solid $color-white 1px;
+
+      &:hover {
+        background: $color-black;
+        color: $color-white;
+        border-color: $color-white;
+        box-shadow: 5px 5px 0px 0px $color-black;
+      }
+    }
+  }
 }

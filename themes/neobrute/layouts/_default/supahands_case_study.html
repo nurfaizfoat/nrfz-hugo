@@ -1,30 +1,23 @@
 {{ define "main" }}
-<div class="container">
-  <div class="columns is-vcentered">
-    <div class="column is-8">
-      <p class="bd-notification is-primary">First column</p>
+<div class="mt-4 container">
+  <div class="columns is-one-quarter">
+    <div class="column is-flex is-flex-direction-column is-justify-content-flex-end">
+      <h4 class="is-size-1 sawarabi-mincho-regular is-white-title">Supahands Redesign</h4>
+      <hr class="is-white-line"></hr>
+      <h5 class="is-size-4 sawarabi-mincho-regular is-white-title">Project Duration</h4>
+       <p class="is-white-title">May 2015 - May 2016</p> 
+      <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Team</h4>
+        <p class="is-white-title">1 x Product Manager</p>
+        <p class="is-white-title">1 x Frontend Developer</p>
+        <p class="is-white-title">1 x Product Designer</p> 
+      <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Company</h4>
+        <p class="is-white-title">Supahands</p> 
     </div>
-    <div class="column">
-      <p class="bd-notification is-primary">
-        Second column with more content. This is so you can see the vertical
-        alignment.
-      </p>
+    <div class="column is-mobile is-8">
+      <figure class="image">
+        <img class="is-borderless has-shadow" src="../images/supahands_dashboard.png?"/>
+      </figure>
     </div>
   </div>
-    <div class="columns is-one-quarter">
-      <div class="column">
-        <section class="hero is-large is-info">
-          <div class="hero-body">
-            <p class="title">Supahands Case Stud hahahahy</p>
-            <p class="subtitle">A deep dive into the Supahands project.</p>
-          </div>
-        </section>
-      </div>
-      <div class="column is-mobile is-8">
-        <figure class="image">
-          <img src="https://placehold.co/750x650"/>
-        </figure>
-      </div>
-    </div>
 </div>
 {{ end }}
