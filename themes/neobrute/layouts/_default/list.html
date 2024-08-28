@@ -1,13 +1,8 @@
 {{ define "main" }}
-<article class="markdown">
-  {{ if .Content }}
-    {{- .Content -}}
-  {{ else }}
+  {{ partial "header.html" . }} <!-- Ensure you are passing the current context -->
+  <article>
     {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </li>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{ end }}
-  {{ end }}
-</article>
+  </article>
 {{ end }}

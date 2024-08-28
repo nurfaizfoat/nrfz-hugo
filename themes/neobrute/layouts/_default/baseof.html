@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}" class="{{ if eq .Layout "supahands_case_study" }}is-global-dark-bg{{ else }}default{{ end }}">
-
 <head>
   {{ partial "htmlhead" . }}
 </head>
-
 <body class="{{ if eq .Type "supahands_case_study" }}case-study-body{{ end }}">
   {{ if eq .Type "supahands_case_study" }}
-    {{ partial "header_case_study" . }}
+    {{ partial "header_case_study.html" . }}
   {{ else }}
-    {{ partial "header" . }}
+    {{ partial "header.html" . }}
   {{ end }}
 
-  <!-- Debugging output -->
-  <!-- <div>Page Type: {{ .Type }}</div>
-  <div>Page Layout: {{ .Layout }}</div>
-  <div>Baseof.html is rendering!</div> -->
-  
-  <!-- Main content block -->
   <main>
     {{ block "main" . }}{{ end }}
   </main>
@@ -28,5 +20,4 @@
 
   {{ template "_internal/google_analytics.html" . }}
 </body>
-
 </html>
