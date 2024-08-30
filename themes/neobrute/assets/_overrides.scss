@@ -204,3 +204,17 @@ a {
   color: $color-active; // Make sure this variable is defined, or use a specific color
   background-color: transparent;
 }
+
+// Override Bulma tabs active color
+.tabs .is-active a {
+  color: $color-active !important;
+  background-color: transparent;
+}
+
+.tabs.is-boxed li.is-active a {
+  background-color: $color-background;
+}
+
+.tabs.is-boxed a:hover {
+  background-color: $color-background;
+}

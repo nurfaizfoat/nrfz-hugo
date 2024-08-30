@@ -23,6 +23,10 @@
 {{ $imgHover := resources.Get "js/imgHover.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $imgHover.RelPermalink }}" defer></script>
 
+{{ $imgTab := resources.Get "js/imgTab.js" | resources.Minify | resources.Fingerprint }}  
+<script src="{{ $imgTab.RelPermalink }}" defer></script>
+
+
 {{- template "_internal/google_analytics.html" . -}}
 
 <!-- RSS -->

@@ -20,11 +20,32 @@
             <p>Outside of work, I enjoy mentoring aspiring designers, exploring new business ventures, and spending time by the water—whether it's fishing or simply enjoying the serenity of the outdoors.</p>
                             
         </div>
-        <div class="column pt-5">  
-            <figure class="image">
-            <img class="is-borderless is-rounded-img" src="../images/jomlaunch_2017.jpg?"/>
-            <p class="has-text-centered pt-2"><i>Presenting a project at JomLaunch 2017</i></p>
-          </figure></div>
+        <div class="column">
+            <div class="tabs is-boxed is-right is-small">
+                <ul>
+                    <li class="is-active" onclick="showImage('weekdays')">
+                        <a>
+                            <span class="icon is-small"><i class="fa-solid fa-school" aria-hidden="true"></i></span>
+                            <span>Weekdays</span>
+                        </a>
+                    </li>
+                    <li onclick="showImage('weekends')">
+                        <a>
+                            <span class="icon is-small"><i class="fa-solid fa-fish" aria-hidden="true"></i></span>
+                            <span>Weekends</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <figure class="image" id="weekdays-image">
+                <img class="is-borderless is-rounded-img" src="../images/jomlaunch_2017.jpg?"/>
+                <p class="has-text-centered pt-2"><i>Presenting a project at JomLaunch 2017</i></p>
+            </figure>
+            <figure class="image" id="weekends-image" style="display: none;">
+                <img class="is-borderless is-rounded-img" src="../images/weekend_trip.jpg?"/>
+                <p class="has-text-centered pt-2"><i>Enjoying the weekend</i></p>
+            </figure>
+        </div>        
       </div>
 </div>
 <div class="container pt-4">
