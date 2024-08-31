@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" class="{{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") }}is-global-dark-bg{{ else }}default{{ end }}">
+<html lang="{{ .Site.Language.Lang }}" class="{{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") }}is-global-dark-bg{{ else }}default{{ end }}">
 <head>
   {{ partial "htmlhead" . }}
 </head>
-<body class="{{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") }}case-study-body{{ end }}">
-  {{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") }}
+<body class="{{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") }}case-study-body{{ end }}">
+  {{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") }}
     {{ partial "header_case_study.html" . }}
   {{ else }}
     {{ partial "header.html" . }}
