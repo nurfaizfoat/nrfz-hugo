@@ -137,12 +137,14 @@ a {
 
 .separator-bar {
   position: absolute;
-  width: 200px;
   height: 0px;
   opacity: 1;
   border-top: 3px solid $color-black;
-}
 
+  &.is-short {
+    width: 100px;
+  }
+}
 .hoverable-image {
   filter: grayscale(100%) brightness(80%);
   @include hover-transform;
