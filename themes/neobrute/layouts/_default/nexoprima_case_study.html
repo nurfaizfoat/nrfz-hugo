@@ -1,0 +1,168 @@
+{{ define "main" }}
+<div class="pt-2 mt-2 mb-6 pb-6 container">
+  <div class="columns is-one-quarter">
+    <div class="column is-flex is-flex-direction-column is-justify-content-flex-end">
+      <h4 class="is-size-1 sawarabi-mincho-regular is-white-title">NexoPrima Patient Monitor</h4>
+      <hr class="is-white-line">
+      </hr>
+      <h5 class="is-size-4 sawarabi-mincho-regular is-white-title">Project Duration </h4>
+        <p class="is-white-title">October 2018 - December 2018</p>
+        <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Team </h4>
+          <p class="is-white-title">1 x Product Managers</p>
+          <p class="is-white-title">1 x UI/UX Designer</p>
+          <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Company </h4>
+            <p class="is-white-title">NexoPrima</p>
+    </div>
+    <div class="column is-mobile is-8">
+      <figure class="image">
+        <img class="is-borderless is-rounded-img has-shadow" src="../images/nexoprima_monitor.jpg?" />
+      </figure>
+    </div>
+  </div>
+</div>
+<div class="container pt-6 mt-6 pb-6 is-fluid pale-yellow-bg">
+  <div class="container">
+    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">My Role</h4>
+    <p>I was tasked to design the UI and develop the front end codebase for this project.</p><br>
+    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Background</h4>
+    <p>Nexoprima is a newly founded startup specializing in Medical-Tech Appliances, including Patient Monitors, Bedside Ventilators, and Nitric Oxide Delivery Devices. Recently, they have secured a research grant from a well-known private hospital in Malaysia to lead an initiative for an integrated electronic medical record system.</p><br>
+    <p>The goal is to centralize data obtained from every purchased proprietary medical appliance from various brands such as General Electric, MindRay, and Philips. This data will then be accessible to registered users worldwide via any device capable of running a modern internet browser, such as Chrome.</p><br>
+    <p>One prominent use case for this project is during a heart surgery in an Operating Theater. Healthcare practitioners can watch and monitor the patient's progress from elsewhere, regardless of their location.</p><br>    
+    <h3 class="is-size-3 sawarabi-mincho-regular pb-4">Ideation & Process</h3>
+    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Medical Appliances UI Convention</h4>
+    <p>Patient statistics are complex and come in various forms of numerical data. Given the short duration of this project, I do not have the opportunity to conduct the usual UX exercises that I typically perform with other projects.
+    </p><br>
+    <p>Following the common rule of thumb when dealing with well-established consumer products, I experimented with my design exploration using the conventional UI standards for Medical Appliances.
+    </p><br>
+    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Graphs, Vibrant Colors, and Mobile Friendly</h4>
+    <p>One of the critical features that sets this initiative apart from existing solutions is the ability for users to scan a QR code from a device and view it on their mobile phone. Consequently, the challenge lies in adapting the entire interface to a smaller format.
+    </p><br>
+    <p>I was struggling to find the best graphing approach for this project. Since it runs on a web browser, I needed to be cautious about its performance when more than three graphs are running concurrently.
+    </p><br>
+    <p>Additionally, the color scheme chosen is within the dark spectrum, which is friendly to human eyes in dimmed room settings. The device is typically switched on 24/7 next to the patient. Having a bright background would be a poor choice since it would illuminate the entire room at night (during sleeping hours).
+    </p><br>
+    <!-- Image & Figures -->
+    <h3 class="is-size-3 sawarabi-mincho-regular pb-4">Visual Design</h3>
+    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Inspiration from Established Brands</h4>
+    <p>I drew inspiration from established brands such as Philips, Mindray, and General Electric. These companies have been in the medical appliance industry for decades, and their products are widely used in hospitals worldwide.</p><br>
+    <!-- Image and Figure -->
+    <div class="columns pt-6 pb-6">
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/philipscm150.png?" />
+          <p class="has-text-centered pt-2">
+            <i>Philips CM150 Efficia Interface</i>
+          </p>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/GE_monitors.jpg?" />
+          <p class="has-text-centered pt-2">
+            <i>General Electric Patient Monitors</i>
+          </p>
+        </figure>
+      </div>
+    </div>
+    <!-- Additional Row -->
+    <div class="columns pt-6 pb-6">
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/philipsmx550.jpg?" />
+          <p class="has-text-centered pt-2">
+            <i>Philips MX550 IntelliVue Interface</i>
+          </p>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/mindraypassport8.png?" />
+          <p class="has-text-centered pt-2">
+            <i>MindRay Passport8 Interface</i>
+          </p>
+        </figure>
+      </div>
+    </div>
+    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">HiFi Design Exploration</h4>
+    <p>After several iterations and feedback sessions, I finalized the design and proceeded to develop the front-end codebase using HTML, CSS, and JavaScript. The result is a responsive, mobile-friendly, and performant interface that meets the project's requirements.</p><br>
+    <p>As with my other projects, I have also prepared a thorough how-to guide on how to run this project locally and paramount CSS classes usage, in case they want to develop the code base further.</p><br>
+    <p>You may experience the functionality firsthand by exploring the DEMO version, which operates seamlessly across various browsers. For a comprehensive demonstration, visit the <a href="https://tender-nobel-222195.netlify.app/">Web version</a>, optimized for standard browsing. Additionally, try <a href="https://tender-nobel-222195.netlify.app/mobile-waveform.html">Mobile Optimized version</a> for an enhanced experience on handheld devices. To delve deeper into the frontend aspects, you can have a look at the <a href="https://tender-nobel-222195.netlify.app/frontend-documentation.html">Frontend Documentation</a>.</p>
+    <br>  
+    <!-- Image and Figure -->
+    <div class="columns pt-6 pb-6">
+      <div class="column is-one-quarter">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/020_ppum_mobile_view_a.jpg?" />
+          <p class="has-text-centered pt-2">
+            <i>Mobile View - Vital Sign</i>
+          </p>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/001_ppum_iot_main_screen.jpg?">
+          <p class="has-text-centered pt-2"><i>First HiFi Mockup - Landing Screen</i></p>
+        </figure>
+      </div>
+      <div class="column is-one-quarter">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/021_ppum_mobile_view_b.jpg" />
+          <p class="has-text-centered pt-2">
+            <i>Mobile View - Viral Graph</i>
+          </p>
+        </figure>
+      </div>
+    </div>
+    <!-- Additional Row -->
+    <div class="columns pt-4 pb-4">
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/015_ppum_device_settings.jpg?" />
+          <p class="has-text-centered pt-2">
+            <i>Device Setting Page</i>
+          </p>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/005_ppum_start_case_patient_keyboard.jpg?" />
+          <p class="has-text-centered pt-2">
+            <i>On Screen Keyboard for Touch Screen Use Case</i>
+          </p>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/011_ppum_device_settings_connectivity_stats.jpg?" />
+          <p class="has-text-centered pt-2">
+            <i>Device Connectivity Stats</i>
+          </p>
+        </figure>
+      </div>
+    </div>
+    <!-- Image and Figure -->
+    <div class="columns pt-4 pb-4">
+      <div class="column">
+        <figure class="image">
+          <img class="is-borderless is-rounded-img" src="../images/nexoprima_final_product.jpg?">
+          <p class="has-text-centered pt-2"><i>Final Product - Tested on Chrome</i></p>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="image is-16by9">
+          <iframe
+            class="has-ratio"
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/J_TOxsu20x0?si=E_ZznGz0ipJXmz_c"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  {{ partial "footer" . }}
+</div>
+{{ end }}

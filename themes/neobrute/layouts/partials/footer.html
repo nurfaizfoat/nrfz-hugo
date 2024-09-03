@@ -1,5 +1,35 @@
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>{{ site.Params.footer.copyright }}</p>
+<div class="container pt-6 pb-6">
+  <div class="separator-bar footer-separator"></div>
+  <div class="columns">
+    <div class="column">
+      <p class="has-text-grey-light has-text-left"><i class="fa-solid fa-caret-left"></i> Previous</p>
+      <p class="has-text-left">
+        {{$randomPage := index (shuffle (slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study")) 0}}
+        <a href="{{ $randomPage | relURL }}">
+          {{ if eq $randomPage "lelong_case_study" }}Lelong.my Case Study
+          {{ else if eq $randomPage "ookyo_case_study" }}Ookyo Case Study
+          {{ else if eq $randomPage "supahands_case_study" }}Supahands Case Study
+          {{ else if eq $randomPage "supahandswp_case_study" }}Supahands Workplace Case Study
+          {{ else if eq $randomPage "nexoprima_case_study" }}Nexoprima Case Study
+          {{ end }}
+        </a>
+      </p>
+    </div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column">
+      <p class="has-text-grey-light has-text-right">Next <i class="fa-solid fa-caret-right"></i></p>
+      <p class="has-text-right">
+        {{$randomPage := index (shuffle (slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study")) 0}}
+        <a href="{{ $randomPage | relURL }}">
+          {{ if eq $randomPage "lelong_case_study" }}Lelong.my Case Study
+          {{ else if eq $randomPage "ookyo_case_study" }}Ookyo Case Study
+          {{ else if eq $randomPage "supahands_case_study" }}Supahands Case Study
+          {{ else if eq $randomPage "supahandswp_case_study" }}Supahands Workplace Case Study
+          {{ else if eq $randomPage "nexoprima_case_study" }}Nexoprima Case Study
+          {{ end }}
+        </a>
+      </p>
+    </div>
   </div>
-</footer>
+</div>
