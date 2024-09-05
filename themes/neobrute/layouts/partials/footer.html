@@ -4,13 +4,18 @@
     <div class="column">
       <p class="has-text-grey-light has-text-left"><i class="fa-solid fa-caret-left"></i> Previous</p>
       <p class="has-text-left">
-        {{$randomPage := index (shuffle (slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study")) 0}}
-        <a href="{{ $randomPage | relURL }}">
-          {{ if eq $randomPage "lelong_case_study" }}Lelong.my Case Study
-          {{ else if eq $randomPage "ookyo_case_study" }}Ookyo Case Study
-          {{ else if eq $randomPage "supahands_case_study" }}Supahands Case Study
-          {{ else if eq $randomPage "supahandswp_case_study" }}Supahands Workplace Case Study
-          {{ else if eq $randomPage "nexoprima_case_study" }}Nexoprima Case Study
+        {{$currentPage := .RelPermalink}}
+        {{$pages := slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study"}}
+        {{$shuffledPages := shuffle $pages}}
+        {{$filteredPages := where $shuffledPages "RelPermalink" "!=" $currentPage}}
+        {{$previousPage := index $filteredPages 0}}
+        <a href="{{ $previousPage | relURL }}">
+          {{ if eq $previousPage "lelong_case_study" }}Lelong.my Case Study
+          {{ else if eq $previousPage "ookyo_case_study" }}Ookyo Case Study
+          {{ else if eq $previousPage "supahands_case_study" }}Supahands Case Study
+          {{ else if eq $previousPage "supahandswp_case_study" }}Supahands Workplace Case Study
+          {{ else if eq $previousPage "mrumpan_case_study" }}Mr. Umpan Case Study
+          {{ else if eq $previousPage "nexoprima_case_study" }}Nexoprima Case Study
           {{ end }}
         </a>
       </p>
@@ -20,13 +25,14 @@
     <div class="column">
       <p class="has-text-grey-light has-text-right">Next <i class="fa-solid fa-caret-right"></i></p>
       <p class="has-text-right">
-        {{$randomPage := index (shuffle (slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study")) 0}}
-        <a href="{{ $randomPage | relURL }}">
-          {{ if eq $randomPage "lelong_case_study" }}Lelong.my Case Study
-          {{ else if eq $randomPage "ookyo_case_study" }}Ookyo Case Study
-          {{ else if eq $randomPage "supahands_case_study" }}Supahands Case Study
-          {{ else if eq $randomPage "supahandswp_case_study" }}Supahands Workplace Case Study
-          {{ else if eq $randomPage "nexoprima_case_study" }}Nexoprima Case Study
+        {{$nextPage := index $filteredPages 1}}
+        <a href="{{ $nextPage | relURL }}">
+          {{ if eq $nextPage "lelong_case_study" }}Lelong.my Case Study
+          {{ else if eq $nextPage "ookyo_case_study" }}Ookyo Case Study
+          {{ else if eq $nextPage "supahands_case_study" }}Supahands Case Study
+          {{ else if eq $nextPage "supahandswp_case_study" }}Supahands Workplace Case Study
+          {{ else if eq $previousPage "mrumpan_case_study" }}Mr. Umpan Case Study
+          {{ else if eq $nextPage "nexoprima_case_study" }}Nexoprima Case Study
           {{ end }}
         </a>
       </p>
