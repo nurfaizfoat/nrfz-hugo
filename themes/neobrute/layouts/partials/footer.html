@@ -9,7 +9,14 @@
         {{$shuffledPages := shuffle $pages}}
         {{$filteredPages := where $shuffledPages "RelPermalink" "!=" $currentPage}}
         {{$previousPage := index $filteredPages 0}}
-        <a href="{{ $previousPage | relURL }}">{{ getPageTitle $previousPage }}</a>
+        <a href="{{ $previousPage | relURL }}">
+          {{ if eq $previousPage "lelong_case_study" }}Lelong.my Case Study
+          {{ else if eq $previousPage "ookyo_case_study" }}Ookyo Case Study
+          {{ else if eq $previousPage "supahands_case_study" }}Supahands Case Study
+          {{ else if eq $previousPage "mrumpan_case_study" }}Mr. Umpan Case Study
+          {{ else if eq $previousPage "nexoprima_case_study" }}Nexoprima Case Study
+          {{ end }}
+        </a>
       </p>
     </div>
     <div class="column"></div>
@@ -18,17 +25,15 @@
       <p class="has-text-grey-light has-text-right">Next <i class="fa-solid fa-caret-right"></i></p>
       <p class="has-text-right">
         {{$nextPage := index $filteredPages 1}}
-        <a href="{{ $nextPage | relURL }}">{{ getPageTitle $nextPage }}</a>
+        <a href="{{ $nextPage | relURL }}">
+          {{ if eq $nextPage "lelong_case_study" }}Lelong.my Case Study
+          {{ else if eq $nextPage "ookyo_case_study" }}Ookyo Case Study
+          {{ else if eq $nextPage "supahands_case_study" }}Supahands Case Study
+          {{ else if eq $nextPage "supahandswp_case_study" }}Supahands Workplace Case Study
+          {{ else if eq $nextPage "nexoprima_case_study" }}Nexoprima Case Study
+          {{ end }}
+        </a>
       </p>
     </div>
   </div>
 </div>
-{{ define "getPageTitle" }}
-  {{ if eq . "lelong_case_study" }}Lelong.my Case Study
-  {{ else if eq . "ookyo_case_study" }}Ookyo Case Study
-  {{ else if eq . "supahands_case_study" }}Supahands Case Study
-  {{ else if eq . "supahandswp_case_study" }}Supahands Workplace Case Study
-  {{ else if eq . "mrumpan_case_study" }}Mr. Umpan Case Study
-  {{ else if eq . "nexoprima_case_study" }}Nexoprima Case Study
-  {{ end }}
-{{ end }}
