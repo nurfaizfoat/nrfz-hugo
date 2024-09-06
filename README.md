@@ -11,7 +11,7 @@ Layout with the [Bulma](https://bulma.io/) CSS Framework based on Flexbox.
 
 ## 📦 Installation
 
-The theme file is in the theme dir, so in order to use it, you need first to install Hugo in your development environment and then `git submodule` it.
+The theme file is in the `themes/neobrute` dir, so in order to use it, you need first to install Hugo in your development environment and then `git submodule` it.
 I'll write an eloborate instruction later. In the meantime, you may have a look at [Hugo Deployment](https://gohugo.io/hosting-and-deployment/)
 
 ## Screenshots
