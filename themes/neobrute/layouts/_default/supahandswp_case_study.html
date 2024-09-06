@@ -1,23 +1,25 @@
 {{ define "main" }}
-<div class="pt-2 mt-2 mb-6 pb-6 container">
-  <div class="columns is-one-quarter">
-    <div class="column is-flex is-flex-direction-column is-justify-content-flex-end">
-      <h4 class="is-size-1 sawarabi-mincho-regular is-white-title">Supahands Workplace</h4>
-      <hr class="is-white-line">
-      </hr>
-      <h5 class="is-size-4 sawarabi-mincho-regular is-white-title">Project Duration </h4>
-        <p class="is-white-title">March 2016 - May 2017</p>
-        <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Team </h4>
-          <p class="is-white-title">1 x Product Managers</p>
-          <p class="is-white-title">4 x Web Developers</p>
-          <p class="is-white-title">2 x UI/UX Designer</p>
-          <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Company </h4>
-            <p class="is-white-title">Supahands</p>
-    </div>
-    <div class="column is-mobile is-8">
-      <figure class="image">
-        <img loading="lazy" class="is-borderless is-rounded-img has-shadow" src="../images/supahands_oms_splash.jpg?" />
-      </figure>
+<div class="container is-fluid">
+  <div class="pt-2 mt-2 mb-6 pb-6 container">
+    <div class="columns is-one-quarter">
+      <div class="column is-flex is-flex-direction-column is-justify-content-flex-end">
+        <h4 class="is-size-1 sawarabi-mincho-regular is-white-title">Supahands Workplace</h4>
+        <hr class="is-white-line">
+        </hr>
+        <h5 class="is-size-4 sawarabi-mincho-regular is-white-title">Project Duration </h4>
+          <p class="is-white-title">March 2016 - May 2017</p>
+          <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Team </h4>
+            <p class="is-white-title">1 x Product Managers</p>
+            <p class="is-white-title">4 x Web Developers</p>
+            <p class="is-white-title">2 x UI/UX Designer</p>
+            <h5 class="mt-4 is-size-4 sawarabi-mincho-regular is-white-title">Company </h4>
+              <p class="is-white-title">Supahands</p>
+      </div>
+      <div class="column is-mobile is-8">
+        <figure class="image">
+          <img loading="lazy" class="is-borderless is-rounded-img has-shadow" src="../images/supahands_oms_splash.jpg?" />
+        </figure>
+      </div>
     </div>
   </div>
 </div>
@@ -177,5 +179,7 @@
   </div>
   <!-- Footer -->
   {{ partial "footer" . }}
+  <!-- Floating Menu -->
+  {{ partial "floating_menu" . }}
 </div>
 {{ end }}

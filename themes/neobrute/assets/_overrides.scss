@@ -251,3 +251,93 @@ a {
 .tabs.is-boxed a:hover {
   background-color: $color-background;
 }
+
+// Floating Menu
+.float-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.float-nav a.menu-btn {
+  text-decoration: none;
+  display: block;
+  padding: 17px 19px 12px 19px;
+  text-align: center;
+  background-color: $color-white;
+  color: $color-black;
+  border: solid $color-black 1px;
+  box-shadow: 5px 5px 0px 0px $color-black;
+  border-radius: 15px;
+}
+
+.float-nav a.menu-btn.active {
+  transition: background-color 250ms linear;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+
+.float-nav a.menu-btn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.float-nav a.menu-btn ul li.line {
+  border: 1px solid $color-black;
+  width: 100%;
+  margin-bottom: 7px;
+  transition-duration: 0.1s;
+}
+
+.float-nav a.menu-btn .menu-txt {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.main-nav {
+  display: none;
+  opacity: 0;
+  font-family: sans-serif;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 250ms;
+}
+
+.main-nav.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 250ms;
+}
+
+.main-nav ul {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: $color-white;
+  color: $color-black;
+  border: solid $color-black 1px;
+  box-shadow: 5px 5px 0px 0px $color-black;
+  border-radius: 15px;
+}
+
+.main-nav ul li a {
+  font-family: $font-primary;
+  text-decoration: none;
+  display: block;
+  font-weight: 200;
+  padding: 18px 80px 18px 18px;
+  color: $color-black;
+}
+
+.main-nav ul li a:hover {
+  font-weight: 400;
+}

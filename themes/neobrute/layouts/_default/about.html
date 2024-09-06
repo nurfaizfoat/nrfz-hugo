@@ -1,147 +1,151 @@
 {{ define "main" }}
-<div class="container pt-6 pb-5">
-    <div class="columns">
-        <div class="column">
-            <h3 class="is-size-3 sawarabi-mincho-regular pb-4">A little bit About Me</h3>
-            <div class="separator-bar is-short"></div>               
-        </div>
-        <div class="column"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="columns">
-        <div class="column">
-            <p>Always ready to take on new challenges, I have built my career across a diverse range of lean startups and established companies. I began my journey as a Creative UI/UX Executive at Lelong.my, a homegrown e-commerce platform, and quickly advanced to Lead UI/UX Designer roles at Supahands, where I shaped the design of innovative AI-driven solutions. </p><br><p>My experience expanded further during my time at Maxis, where I contributed to a crucial MVNO project, honing my skills in creating seamless and user-friendly interfaces.</p><br>
-
-            <p>I later took on the role of Chief Project Officer at INVOKE Malaysia, an NGO focused on activism, where I was instrumental in preparing for Malaysia's 14th General Election campaign. After a 10-month sabbatical spent freelancing, mentoring budding product designers, and exploring business ideas, I became Head of Product at Maideasy, where I restructured the company's business verticals to focus on generating steady revenue.</p><br>
-
-            <p>Most recently, I ventured into the fishing and tackle industry with MR. UMPAN, diving into the complexities of entrepreneurship. This journey has only deepened my understanding of business dynamics and reinforced my passion for crafting impactful design solutions.</p><br>
-
-            <p>Outside of work, I enjoy mentoring aspiring designers, exploring new business ventures, and spending time by the water—whether it's fishing or simply enjoying the serenity of the outdoors.</p>
-                            
-        </div>
-        <div class="column">
-            <div class="tabs is-boxed is-right is-small">
-                <ul>
-                    <li class="is-active" onclick="showImage('weekdays')">
-                        <a>
-                            <span class="icon is-small"><i class="fa-solid fa-school" aria-hidden="true"></i></span>
-                            <span>Weekdays</span>
-                        </a>
-                    </li>
-                    <li onclick="showImage('weekends')">
-                        <a>
-                            <span class="icon is-small"><i class="fa-solid fa-fish" aria-hidden="true"></i></span>
-                            <span>Weekends</span>
-                        </a>
-                    </li>
-                </ul>
+<div class="container is-fluid">
+    <div class="container pt-6 pb-5">
+        <div class="columns">
+            <div class="column">
+                <h3 class="is-size-3 sawarabi-mincho-regular pb-4">A little bit About Me</h3>
+                <div class="separator-bar is-short"></div>               
             </div>
-            <figure class="image" id="weekdays-image">
-                <img loading="lazy" class="is-borderless is-rounded-img" src="../images/jomlaunch_2017.jpg?"/>
-                <p class="has-text-centered pt-2"><i>Presenting a project at JomLaunch 2017</i></p>
-            </figure>
-            <figure class="image" id="weekends-image" style="display: none;">
-                <img loading="lazy" class="is-borderless is-rounded-img" src="../images/weekend_trip.jpg?"/>
-                <p class="has-text-centered pt-2"><i>Enjoying the weekend</i></p>
-            </figure>
-        </div>        
-      </div>
-</div>
-<div class="container pt-6">
-    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Activism</h4>
-    <div class="separator-bar is-short"></div>     
-    <div class="columns pt-5">
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">Visual Design using Sketch</h5>
-            <p>Malaysian Global Innovation & Creativity Centre (MaGIC) Academy Instructor</p>
-            <p class="has-text-grey"><i>August 2015</i></p>
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">Forum: Accelerating Your Career in Startup</h5>
-            <p>MaGIC Academy Panelist</p>
-            <p class="has-text-grey"><i>September 2015</i></p>
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">Driving User Onboarding through an Impactful UX</h5>
-            <p>MaGIC Academy Instructor</p>
-            <p class="has-text-grey"><i>May 2016</i></p>
+            <div class="column"></div>
         </div>
     </div>
-    <div class="columns">
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">JOMLaunch 5: NEOMON Baby Monitor</h4>
-            <p>Presenter and Participant - Won 1st Place for Best Project</p>
-            <p class="has-text-grey"><i>September 2017</i></p>
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">COVID19 - 3D Printing to the Rescue Collective</h5>
-            <p>Founder and Facilitator</p>
-            <p class="has-text-grey"><i>March 2020</i></p>
-        </div>
-        <div class="column"></div>
-    </div>
-</div>
-<div class="container pt-6 pb-6">
-    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Press Mentions</h4>
-    <div class="separator-bar is-short"></div>     
-    <div class="columns pt-5">
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">The EDGE</h5>
-            <p>Cover Story: 3D printing to the rescue</p>
-            <p class="has-text-grey"><i>15 November 2021</i></p>
-            <a href="https://theedgemalaysia.com/article/cover-story-3d-printing-rescue" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">Astro AWANI</h5>
-            <p>Sukarelawan DIY tempatan hasilkan perisai muka untuk petugas barisan hadapan</p>
-            <p class="has-text-grey"><i>25 March 2020</i></p>
-            <a href="https://www.astroawani.com/berita-malaysia/sukarelawan-diy-tempatan-hasilkan-perisai-muka-untuk-petugas-barisan-hadapan-235107" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">New Straits Times</h5>
-            <p>PPE: 3D printing comes to frontline medics' rescue</p>
-            <p class="has-text-grey"><i>2 April 2020</i></p>
-            <a href="https://pre-www.nst.com.my/news/nation/2020/04/580523/ppe-3d-printing-comes-frontline-medics-rescue" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">The Malaysian Reserve</h5>
-            <p>Local initiative produces face shields for frontliners</p>
-            <p class="has-text-grey"><i>2 April 2020</i></p>
-            <a href="https://themalaysianreserve.com/2020/03/27/local-initiative-produces-face-shields-for-frontliners/" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">Malaysia Hari Ini - TV3</h5>
-            <p>COVID-19: Komuniti Para Pencetak 3D Malaysia</p>
-            <p class="has-text-grey"><i>1 April 2020</i></p>
-            <a href="https://www.youtube.com/watch?v=1RZChy2xx0o" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
-        </div>
-        <div class="column">
-            <h5 class="is-size-5 sawarabi-mincho-regular">AMANZ</h5>
-            <p>Pengesan Nadi NEOMON</p>
-            <p class="has-text-grey"><i>2 April 2020</i></p>
-            <a href="https://www.facebook.com/watch/?v=10155274412976379" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <p>Always ready to take on new challenges, I have built my career across a diverse range of lean startups and established companies. I began my journey as a Creative UI/UX Executive at Lelong.my, a homegrown e-commerce platform, and quickly advanced to Lead UI/UX Designer roles at Supahands, where I shaped the design of innovative AI-driven solutions. </p><br><p>My experience expanded further during my time at Maxis, where I contributed to a crucial MVNO project, honing my skills in creating seamless and user-friendly interfaces.</p><br>
+
+                <p>I later took on the role of Chief Project Officer at INVOKE Malaysia, an NGO focused on activism, where I was instrumental in preparing for Malaysia's 14th General Election campaign. After a 10-month sabbatical spent freelancing, mentoring budding product designers, and exploring business ideas, I became Head of Product at Maideasy, where I restructured the company's business verticals to focus on generating steady revenue.</p><br>
+
+                <p>Most recently, I ventured into the fishing and tackle industry with MR. UMPAN, diving into the complexities of entrepreneurship. This journey has only deepened my understanding of business dynamics and reinforced my passion for crafting impactful design solutions.</p><br>
+
+                <p>Outside of work, I enjoy mentoring aspiring designers, exploring new business ventures, and spending time by the water—whether it's fishing or simply enjoying the serenity of the outdoors.</p>
+                                
+            </div>
+            <div class="column">
+                <div class="tabs is-boxed is-right is-small">
+                    <ul>
+                        <li class="is-active" onclick="showImage('weekdays')">
+                            <a>
+                                <span class="icon is-small"><i class="fa-solid fa-school" aria-hidden="true"></i></span>
+                                <span>Weekdays</span>
+                            </a>
+                        </li>
+                        <li onclick="showImage('weekends')">
+                            <a>
+                                <span class="icon is-small"><i class="fa-solid fa-fish" aria-hidden="true"></i></span>
+                                <span>Weekends</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <figure class="image" id="weekdays-image">
+                    <img loading="lazy" class="is-borderless is-rounded-img" src="../images/jomlaunch_2017.jpg?"/>
+                    <p class="has-text-centered pt-2"><i>Presenting a project at JomLaunch 2017</i></p>
+                </figure>
+                <figure class="image" id="weekends-image" style="display: none;">
+                    <img loading="lazy" class="is-borderless is-rounded-img" src="../images/weekend_trip.jpg?"/>
+                    <p class="has-text-centered pt-2"><i>Enjoying the weekend</i></p>
+                </figure>
+            </div>        
         </div>
     </div>
-</div>
-<div class="container pt-4 pb-6">
-    <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Acquired Skills</h4> 
-    <div class="separator-bar is-short"></div>      
-    <div class="tags are-medium pt-5">
-        <span class="tag is-black">User Research</span>
-        <span class="tag is-black">Use Case Studies</span>
-        <span class="tag is-black">Project Management - Agile / Scrum</span>
-        <span class="tag is-black">Lean MVP</span>
-        <span class="tag is-black">UI/UX, Web and App Design</span>
-        <span class="tag is-black">HTML, CSS & Javascript</span>
-        <span class="tag is-black">Figma, InVision, Zeplin</span>
-        <span class="tag is-black">Developer Handoff</span>
-        <span class="tag is-black">Information Architecture</span>
-        <span class="tag is-black">Prototyping</span>
-        <span class="tag is-black">3D Design & Modeling</span>
-        <span class="tag is-black">Social Media Marketing</span>
-      </div>
+    <div class="container pt-6">
+        <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Activism</h4>
+        <div class="separator-bar is-short"></div>     
+        <div class="columns pt-5">
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">Visual Design using Sketch</h5>
+                <p>Malaysian Global Innovation & Creativity Centre (MaGIC) Academy Instructor</p>
+                <p class="has-text-grey"><i>August 2015</i></p>
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">Forum: Accelerating Your Career in Startup</h5>
+                <p>MaGIC Academy Panelist</p>
+                <p class="has-text-grey"><i>September 2015</i></p>
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">Driving User Onboarding through an Impactful UX</h5>
+                <p>MaGIC Academy Instructor</p>
+                <p class="has-text-grey"><i>May 2016</i></p>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">JOMLaunch 5: NEOMON Baby Monitor</h4>
+                <p>Presenter and Participant - Won 1st Place for Best Project</p>
+                <p class="has-text-grey"><i>September 2017</i></p>
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">COVID19 - 3D Printing to the Rescue Collective</h5>
+                <p>Founder and Facilitator</p>
+                <p class="has-text-grey"><i>March 2020</i></p>
+            </div>
+            <div class="column"></div>
+        </div>
+    </div>
+    <div class="container pt-6 pb-6">
+        <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Press Mentions</h4>
+        <div class="separator-bar is-short"></div>     
+        <div class="columns pt-5">
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">The EDGE</h5>
+                <p>Cover Story: 3D printing to the rescue</p>
+                <p class="has-text-grey"><i>15 November 2021</i></p>
+                <a href="https://theedgemalaysia.com/article/cover-story-3d-printing-rescue" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">Astro AWANI</h5>
+                <p>Sukarelawan DIY tempatan hasilkan perisai muka untuk petugas barisan hadapan</p>
+                <p class="has-text-grey"><i>25 March 2020</i></p>
+                <a href="https://www.astroawani.com/berita-malaysia/sukarelawan-diy-tempatan-hasilkan-perisai-muka-untuk-petugas-barisan-hadapan-235107" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">New Straits Times</h5>
+                <p>PPE: 3D printing comes to frontline medics' rescue</p>
+                <p class="has-text-grey"><i>2 April 2020</i></p>
+                <a href="https://pre-www.nst.com.my/news/nation/2020/04/580523/ppe-3d-printing-comes-frontline-medics-rescue" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">The Malaysian Reserve</h5>
+                <p>Local initiative produces face shields for frontliners</p>
+                <p class="has-text-grey"><i>2 April 2020</i></p>
+                <a href="https://themalaysianreserve.com/2020/03/27/local-initiative-produces-face-shields-for-frontliners/" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">Malaysia Hari Ini - TV3</h5>
+                <p>COVID-19: Komuniti Para Pencetak 3D Malaysia</p>
+                <p class="has-text-grey"><i>1 April 2020</i></p>
+                <a href="https://www.youtube.com/watch?v=1RZChy2xx0o" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+            </div>
+            <div class="column">
+                <h5 class="is-size-5 sawarabi-mincho-regular">AMANZ</h5>
+                <p>Pengesan Nadi NEOMON</p>
+                <p class="has-text-grey"><i>2 April 2020</i></p>
+                <a href="https://www.facebook.com/watch/?v=10155274412976379" target="_blank">Read More <i class="fa-solid fa-arrow-trend-up"></i></a>   
+            </div>
+        </div>
+    </div>
+    <div class="container pt-4 pb-6">
+        <h4 class="is-size-4 sawarabi-mincho-regular pb-4">Acquired Skills</h4> 
+        <div class="separator-bar is-short"></div>      
+        <div class="tags are-medium pt-5">
+            <span class="tag is-black">User Research</span>
+            <span class="tag is-black">Use Case Studies</span>
+            <span class="tag is-black">Project Management - Agile / Scrum</span>
+            <span class="tag is-black">Lean MVP</span>
+            <span class="tag is-black">UI/UX, Web and App Design</span>
+            <span class="tag is-black">HTML, CSS & Javascript</span>
+            <span class="tag is-black">Figma, InVision, Zeplin</span>
+            <span class="tag is-black">Developer Handoff</span>
+            <span class="tag is-black">Information Architecture</span>
+            <span class="tag is-black">Prototyping</span>
+            <span class="tag is-black">3D Design & Modeling</span>
+            <span class="tag is-black">Social Media Marketing</span>
+        </div>
+    </div>
+     <!-- Floating Menu -->
+     {{ partial "floating_menu" . }}
 </div>
 {{ end }}
