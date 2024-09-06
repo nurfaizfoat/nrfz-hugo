@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{- template "_internal/opengraph.html" . -}}
+{{ partial "openGraph" . }}
 
 <title>{{ .Page.Title }} | {{ .Site.Title -}}</title>
 <link rel="icon" href="{{ "../images/favicon.ico" | relURL }}" type="image/x-icon">
