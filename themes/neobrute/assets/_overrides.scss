@@ -91,6 +91,7 @@ body {
 
 .is-white-title {
   color: $color-white;
+  -webkit-text-fill-color: $color-white; // Ensure white text color on WebKit browsers
 }
 
 .sawarabi-mincho-regular {
@@ -118,18 +119,21 @@ body {
 
 a {
   color: $color-black;
+  -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
   text-decoration: none;
   transition: all 0.15s ease-out;
 
   &:hover {
     background-color: transparent;
     color: $color-active;
+    -webkit-text-fill-color: $color-active; // Ensure active text color on WebKit browsers
     font-weight: bold;
   }
 
   &.navbar-item:hover {
     background-color: transparent;
     color: $color-active;
+    -webkit-text-fill-color: $color-active; // Ensure active text color on WebKit browsers
   }
 }
 
@@ -160,7 +164,6 @@ a {
   }
 }
 
-
 .hoverable-image {
   filter: grayscale(100%) brightness(80%);
   @include hover-transform;
@@ -184,21 +187,25 @@ a {
 
     .navbar-item {
       color: $color-white;
+      -webkit-text-fill-color: $color-white; // Ensure white text color on WebKit browsers
 
       &:hover {
         color: $color-active;
+        -webkit-text-fill-color: $color-active; // Ensure active text color on WebKit browsers
       }
     }
 
     .button-primary {
       @include button-styles;
       color: $color-black;
+      -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
       background: $color-white;
       border: solid $color-white 1px;
 
       &:hover {
         background: $color-black;
         color: $color-white;
+        -webkit-text-fill-color: $color-white; // Ensure white text color on WebKit browsers
         border-color: $color-white;
         box-shadow: 5px 5px 0px 0px $color-black;
       }
@@ -235,12 +242,14 @@ a {
 // Specific styling for the active state
 .navbar-item.is-active {
   color: $color-active; // Make sure this variable is defined, or use a specific color
+  -webkit-text-fill-color: $color-active; // Ensure active text color on WebKit browsers
   background-color: transparent;
 }
 
 // Override Bulma tabs active color
 .tabs .is-active a {
   color: $color-active !important;
+  -webkit-text-fill-color: $color-active !important; // Ensure active text color on WebKit browsers
   background-color: transparent;
 }
 
@@ -267,6 +276,7 @@ a {
   text-align: center;
   background-color: $color-white;
   color: $color-black;
+  -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
   border: solid $color-black 1px;
   box-shadow: 5px 5px 0px 0px $color-black;
   border-radius: 15px;
@@ -278,7 +288,6 @@ a {
   box-shadow: none;
   border: none;
 }
-
 
 .float-nav a.menu-btn ul {
   list-style: none;
@@ -324,6 +333,7 @@ a {
   padding: 0;
   background-color: $color-white;
   color: $color-black;
+  -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
   border: solid $color-black 1px;
   box-shadow: 5px 5px 0px 0px $color-black;
   border-radius: 15px;
@@ -336,6 +346,7 @@ a {
   font-weight: 200;
   padding: 18px 80px 18px 18px;
   color: $color-black;
+  -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
 }
 
 .main-nav ul li a:hover {
