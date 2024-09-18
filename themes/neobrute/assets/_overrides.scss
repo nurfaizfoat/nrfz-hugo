@@ -28,9 +28,16 @@ $color-active: rgb(255, 0, 0);
   }
 }
 
+// Define a mixin for light font weight
+@mixin font-primary-light {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 300; // Light font weight
+}
+
 // General Styles
 html {
   font-family: $font-primary;
+  @include font-primary-light;
   background-color: $color-background;
 
   &.is-global-dark-bg {
@@ -40,6 +47,7 @@ html {
 
 body {
   font-family: $font-primary;
+  @include font-primary-light;
   animation: fadeInAnimation ease-out 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
