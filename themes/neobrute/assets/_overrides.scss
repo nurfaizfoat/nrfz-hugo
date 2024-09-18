@@ -39,6 +39,7 @@ html {
 }
 
 body {
+  font-family: $font-primary;
   animation: fadeInAnimation ease-out 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
