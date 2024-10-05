@@ -146,7 +146,7 @@ a {
   -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
    
   text-decoration: none;
-  transition: all 0.15s ease-out;
+  transition: all 0.1s ease;
 
   &:hover {
     background-color: transparent;
@@ -240,8 +240,8 @@ a {
 }
 
 .navbar-item {
-  font-weight: 400; // Normal weight
-  transition: color 0.3s ease-in-out, font-variation-settings 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+  font-weight: 300; // Normal weight
+  transition: color 0.1s ease, font-variation-settings 0.1s ease, letter-spacing 0.1s ease, font-weight 0.1s ease;
   transform: translateZ(0); // Creates a new stacking context
 
   &:hover, &.is-active {
