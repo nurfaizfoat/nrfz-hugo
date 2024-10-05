@@ -246,7 +246,6 @@ a {
 
   &:hover, &.is-active {
     font-variation-settings: "wght" 700; // Simulate bold if font supports variable font weight
-    letter-spacing: -0.01em; // Slight letter spacing adjustment
     font-weight: 700; // Fallback for non-variable fonts
   }
 }
@@ -378,3 +377,34 @@ a {
 .main-nav ul li a:hover {
   font-weight: 400;
 }
+
+// Available for work
+// Define the mixin
+@mixin blink($duration: 2s, $timing-function: linear, $iteration-count: infinite) {
+  animation: blinker $duration $timing-function $iteration-count;
+}
+
+// Define the keyframes
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+}
+
+// Use the mixin in your classes
+.available-for-work {
+  margin: 1.5rem 0;
+
+  .blink {
+      @include blink;
+  }
+}
+
+.available-for-work-m {
+  margin: 1.5rem 2rem 1rem 2rem;
+
+  .blink {
+      @include blink;
+  }
+}
+
