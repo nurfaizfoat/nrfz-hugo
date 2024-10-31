@@ -12,9 +12,7 @@ $color-active: rgb(255, 0, 0);
 // Mixins
 @mixin button-styles {
   font-size: 16px;
-  margin-bottom: .5rem;
   text-decoration: none;
-  transition: all 0.2s ease-out;
   justify-content: center;
   padding: calc(.8em - 1px) 1.5em;
   text-align: center;
@@ -123,28 +121,34 @@ body {
 // Components
 .button-primary {
   @include button-styles;
-  color: $color-white;
-  -webkit-text-fill-color: $color-white; // Ensure white text color on WebKit browsers
-  
-  background: $color-black;
-  border: solid $color-black 1px;
+  color: $color-black;
+  -webkit-text-fill-color: $color-black; // Ensure white text color on WebKit browsers
+  background: $color-white;
+  border: solid $color-black 2px;
   border-radius: 10px;
+  box-shadow: 0.2em 0.2em $color-black;
+  cursor: pointer;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
 
   &:hover {
     background: $color-white;
     color: $color-black;
     -webkit-text-fill-color: $color-black; // Ensure white text color on WebKit browsers
-    
     border-color: $color-black;
-    box-shadow: 5px 5px 0px 0px $color-black;
     border-radius: 10px;
+    transform: translate(.5em, .5em);
+    box-shadow: 0.01em 0.01em $color-black;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
   }
 }
 
 a {
   color: $color-black;
   -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
-   
   text-decoration: none;
   transition: all 0.1s ease;
 
@@ -152,8 +156,7 @@ a {
     background-color: transparent;
     color: $color-active;
     -webkit-text-fill-color: $color-active; // Ensure active text color on WebKit browsers
-     
-    font-weight: bold;
+    // font-weight: bold;
   }
 
   &.navbar-item:hover {
@@ -224,29 +227,29 @@ a {
     .button-primary {
       @include button-styles;
       color: $color-black;
-      -webkit-text-fill-color: $color-black; // Ensure black text color on WebKit browsers
+      -webkit-text-fill-color: $color-black; // Ensure white text color on WebKit browsers
       background: $color-white;
-      border: solid $color-white 1px;
+      border: solid $color-black 2px;
+      border-radius: 10px;
+      box-shadow: 0.2em 0.2em $color-black;
+      cursor: pointer;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(.4,0,.2,1);
+      transition-duration: .15s;
 
       &:hover {
-        background: $color-black;
-        color: $color-white;
-        -webkit-text-fill-color: $color-white; // Ensure white text color on WebKit browsers
-        border-color: $color-white;
-        box-shadow: 5px 5px 0px 0px $color-black;
+        background: $color-white;
+        color: $color-black;
+        -webkit-text-fill-color: $color-black; // Ensure white text color on WebKit browsers
+        border-color: $color-black;
+        border-radius: 10px;
+        transform: translate(.5em, .5em);
+        box-shadow: 0.01em 0.01em $color-black;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
       }
     }
-  }
-}
-
-.navbar-item {
-  font-weight: 300; // Normal weight
-  transition: color 0.1s ease, font-variation-settings 0.1s ease, letter-spacing 0.1s ease, font-weight 0.1s ease;
-  transform: translateZ(0); // Creates a new stacking context
-
-  &:hover, &.is-active {
-    font-variation-settings: "wght" 700; // Simulate bold if font supports variable font weight
-    font-weight: 700; // Fallback for non-variable fonts
   }
 }
 
@@ -393,7 +396,7 @@ a {
 
 // Use the mixin in your classes
 .available-for-work {
-  margin: 1.5rem 0;
+  margin: auto 0;
 
   .blink {
       @include blink;
