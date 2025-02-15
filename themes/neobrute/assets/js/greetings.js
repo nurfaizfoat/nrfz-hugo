@@ -16,7 +16,7 @@ function getGreeting() {
 function updateGreeting() {
     const greetingElement = document.getElementById('greeting');
     const greetingText = getGreeting();
-    greetingElement.innerHTML = `${greetingText}. Thanks for dropping by. This website is designed and coded by yours truly. Open-sourced and forkable on my <a href="https://github.com/nurfaizfoat">GitHub</a> | 2024 &#9878; MIT License.`;
+    greetingElement.innerHTML = `${greetingText}. Thanks for dropping by. This website is designed and coded by yours truly. Open-sourced and forkable on my <a href="https://github.com/nurfaizfoat">GitHub</a> | 2014 - 2025 &#9878; MIT License.`;
 }
 
 // Call the updateGreeting function when the page loads
