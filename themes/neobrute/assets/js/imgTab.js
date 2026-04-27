@@ -1,11 +1,17 @@
 function showImage(imageId) {
-    // Hide all images within the specific container
-    document.querySelectorAll('.column .image').forEach(function(image) {
-        image.style.display = 'none';
+    // Get all images within the image container
+    const images = document.querySelectorAll('.image-container .image');
+    const targetImage = document.getElementById(imageId + '-image');
+    
+    // Fade out all images except the target
+    images.forEach(function(image) {
+        if (image !== targetImage) {
+            image.style.opacity = '0';
+        }
     });
-
-    // Show the selected image
-    document.getElementById(imageId + '-image').style.display = 'block';
+    
+    // Fade in the selected image
+    targetImage.style.opacity = '1';
 
     // Update the active tab
     document.querySelectorAll('.tabs li').forEach(function(tab) {

@@ -85,6 +85,22 @@ body {
   border: 1px solid $color-black; // Adjust color as needed
 }
 
+// Smooth image transitions for tab switching
+.image-container {
+  display: grid;
+}
+
+.image-container .image {
+  grid-area: 1 / 1;
+  transition: opacity 0.3s ease;
+}
+
+// Ensure images maintain aspect ratio
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
 // Typography
 .is-dark-grey {
   color: $color-text;
