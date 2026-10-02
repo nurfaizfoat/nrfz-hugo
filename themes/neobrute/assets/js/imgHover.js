@@ -1,11 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {  
-    const img = document.getElementById('imgHover'); // Make sure this ID matches your image  
+document.addEventListener("DOMContentLoaded", function() {
+    const img = document.getElementById('imgHover');
 
-    img.addEventListener('mouseover', () => {  
-        img.src = './images/nrfz_avatar.gif'; // Change to GIF  
-    });  
+    if (!img) {
+        return;
+    }
 
-    img.addEventListener('mouseout', () => {  
-        img.src = './images/nrfz_avatar.png'; // Change back to static image  
-    });  
-});  
+    const staticSrc = img.dataset.staticSrc;
+    const animatedSrc = img.dataset.animatedSrc;
+
+    img.addEventListener('mouseover', () => {
+        img.src = animatedSrc;
+    });
+
+    img.addEventListener('mouseout', () => {
+        img.src = staticSrc;
+    });
+});
