@@ -218,9 +218,47 @@ a {
   }
 }
 
+.perfect-internet-logo-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > a {
+    width: 100%;
+  }
+}
+
+.perfect-internet-logo {
+  display: block;
+  width: 72%;
+  margin-inline: auto;
+  aspect-ratio: 20 / 9;
+  background-color: #111111;
+  filter: none;
+  -webkit-mask: url('{{ "images/fw_perfect_logo.svg" | relURL }}') center / contain no-repeat;
+  mask: url('{{ "images/fw_perfect_logo.svg" | relURL }}') center / contain no-repeat;
+}
+
+a:hover .perfect-internet-logo {
+  background-color: rgb(49, 90, 168);
+}
+
 .is-white-line {
   width: 200px; 
   border: 1.5px solid $color-white; /* Updated border width */
+}
+
+.perfect-case-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.perfect-case-prompt {
+  padding: 1rem 1.25rem;
+  border-left: 4px solid #315AA8;
+  background-color: $color-white;
+  color: $color-text;
 }
 
 // Page-Specific Styles
@@ -426,4 +464,3 @@ a {
       @include blink;
   }
 }
-
