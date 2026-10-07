@@ -1,0 +1,10 @@
+<svg width="400" height="180" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Perfect Internet placeholder logo</title>
+  <desc id="desc">Placeholder logo for the Perfect Internet case study.</desc>
+  <rect x="20" y="20" width="360" height="140" rx="28" fill="#FDF2B8" stroke="#111111" stroke-width="8"/>
+  <circle cx="118" cy="90" r="44" fill="#111111"/>
+  <path d="M101 116V64H121C137 64 148 74 148 89C148 104 137 114 121 114H113V116H101ZM113 102H121C130 102 136 97 136 89C136 81 130 76 121 76H113V102Z" fill="#FDF2B8"/>
+  <path d="M174 120V60H190V120H174Z" fill="#111111"/>
+  <path d="M211 120V60H225L269 94V60H285V120H271L227 86V120H211Z" fill="#111111"/>
+  <path d="M174 139H286" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+</svg>

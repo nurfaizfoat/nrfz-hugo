@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{ $bulma.RelPermalink }}">  
 {{- end }}  
 
-{{- $overrides := $overridesScss | resources.ExecuteAsTemplate "_overrides.scss" . | resources.ToCSS $options | resources.Minify }}  
+{{- $overrides := $overridesScss | resources.ExecuteAsTemplate "_overrides.scss" . | css.Sass $options | resources.Minify }}  
 <link rel="stylesheet" type="text/css" href="{{ $overrides.RelPermalink }}">
 
 {{ $imgHover := resources.Get "js/imgHover.js" | resources.Minify | resources.Fingerprint }}  
@@ -25,6 +25,9 @@
 
 {{ $imgTab := resources.Get "js/imgTab.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $imgTab.RelPermalink }}" defer></script>
+
+{{ $lightbox := resources.Get "js/lightbox.js" | resources.Minify | resources.Fingerprint }}  
+<script src="{{ $lightbox.RelPermalink }}" defer></script>
 
 {{ $floatingMenu := resources.Get "js/floatingMenu.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $floatingMenu.RelPermalink }}" defer></script>
