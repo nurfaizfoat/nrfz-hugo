@@ -26,6 +26,9 @@
 {{ $imgTab := resources.Get "js/imgTab.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $imgTab.RelPermalink }}" defer></script>
 
+{{ $lightbox := resources.Get "js/lightbox.js" | resources.Minify | resources.Fingerprint }}  
+<script src="{{ $lightbox.RelPermalink }}" defer></script>
+
 {{ $floatingMenu := resources.Get "js/floatingMenu.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $floatingMenu.RelPermalink }}" defer></script>
 
