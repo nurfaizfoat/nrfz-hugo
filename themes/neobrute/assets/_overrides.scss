@@ -218,6 +218,48 @@ a {
   }
 }
 
+.work-logo {
+  display: block;
+}
+
+.work-tooltip {
+  position: fixed;
+  z-index: 40;
+  width: 220px;
+  padding: 10px;
+  background: $color-white;
+  border: 2px solid $color-black;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  pointer-events: none;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .work-tooltip-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid $color-black;
+  }
+
+  .work-tooltip-text {
+    margin-top: 8px;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: $color-black;
+  }
+}
+
 .perfect-internet-logo-column {
   display: flex;
   align-items: center;
@@ -588,4 +630,81 @@ body.lightbox-open {
   .blink {
       @include blink;
   }
+}
+
+// Writing (imported from Medium)
+.writing-card {
+  display: block;
+  height: 100%;
+  border: 2px solid $color-black;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $color-white;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 2px solid $color-black;
+  }
+
+  .writing-card-body {
+    padding: 1rem 1.1rem 1.25rem;
+  }
+}
+
+.writing-body {
+  h3,
+  h4 {
+    font-family: $font-secondary;
+    line-height: 1.4;
+    margin: 1.75rem 0 0.75rem;
+  }
+
+  p {
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0 0.4rem;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+  }
+
+  em {
+    color: $color-text;
+  }
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.1rem;
+    border-left: 4px solid $color-black;
+    font-style: italic;
+    color: $color-text;
+  }
+
+  a {
+    color: $color-active;
+    text-decoration: underline;
+  }
+
+  figure {
+    margin: 0;
+  }
+}
+
+.writing-back:hover {
+  color: $color-active;
 }

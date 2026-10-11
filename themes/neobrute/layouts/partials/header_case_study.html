@@ -16,6 +16,7 @@
           <div class="navbar-end">
             <a class="navbar-item {{ if or .IsHome (eq .RelPermalink "/") }}is-active{{ end }}" href="/">Home</a>
             <a class="navbar-item {{ if eq .RelPermalink "/about/" }}is-active{{ end }}" href="/about/">About Me</a>      
+            <a class="navbar-item {{ if eq .Section "writing" }}is-active{{ end }}" href="/writing/">Writing</a>
             <a class="navbar-item" href="https://github.com/nurfaizfoat" target="_blank" rel="noopener noreferrer">GitHub</a>  
             <a class="navbar-item" href="https://www.linkedin.com/in/nurfaiz-foat-58756611b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>    
             <a class="navbar-item" href="https://x.com/nurfaizfoat" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>     
