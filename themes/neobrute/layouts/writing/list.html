@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container is-fluid">
+  <div class="container pt-6 pb-4">
+    <div class="columns">
+      <div class="column">
+        <h3 class="is-size-3 sawarabi-mincho-regular is-dark-grey pb-4">Writing</h3>
+        <div class="separator-bar is-short"></div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </div>
+  <div class="container pb-6">
+    <p class="has-text-grey pb-5">Essays and notes on product design, startups and building things &mdash; originally published on <a class="is-dark-grey" href="https://medium.com/@nurfaizfoat" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+    <div class="columns is-multiline">
+      {{ range .Pages.ByDate.Reverse }}
+      <div class="column is-one-third-desktop is-half-tablet">
+        <a class="writing-card" href="{{ .RelPermalink }}">
+          {{ with .Params.hero }}<img loading="lazy" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+          <div class="writing-card-body">
+            <p class="writing-meta has-text-grey is-size-7">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</p>
+            <h4 class="is-size-5 sawarabi-mincho-regular is-dark-grey pt-2">{{ .Title }}</h4>
+            <p class="has-text-grey is-size-7 pt-2">{{ .Description }}</p>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ partial "floating_menu" . }}
+</div>
+{{ end }}

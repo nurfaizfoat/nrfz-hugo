@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ partial "openGraph" . }}
 
-<title>{{ .Page.Title }} | {{ .Site.Title -}}</title>
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <link rel="icon" href="{{ "../images/favicon.ico" | relURL }}" type="image/x-icon">
 
 {{- $options := (dict "outputStyle" "compressed") }}  
@@ -28,6 +28,9 @@
 
 {{ $lightbox := resources.Get "js/lightbox.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $lightbox.RelPermalink }}" defer></script>
+
+{{ $workThumb := resources.Get "js/workThumb.js" | resources.Minify | resources.Fingerprint }}  
+<script src="{{ $workThumb.RelPermalink }}" defer></script>
 
 {{ $floatingMenu := resources.Get "js/floatingMenu.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $floatingMenu.RelPermalink }}" defer></script>
