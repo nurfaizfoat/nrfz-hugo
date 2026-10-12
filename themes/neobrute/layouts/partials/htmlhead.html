@@ -29,6 +29,9 @@
 {{ $lightbox := resources.Get "js/lightbox.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $lightbox.RelPermalink }}" defer></script>
 
+{{ $progressiveImages := resources.Get "js/progressiveImages.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $progressiveImages.RelPermalink }}" defer></script>
+
 {{ $workThumb := resources.Get "js/workThumb.js" | resources.Minify | resources.Fingerprint }}  
 <script src="{{ $workThumb.RelPermalink }}" defer></script>
 

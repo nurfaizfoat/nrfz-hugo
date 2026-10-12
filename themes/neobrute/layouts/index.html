@@ -9,7 +9,7 @@
       <div class="columns">
         <div class="column is-1 is-one-quarter-mobile is-flex">
           <figure class="is-align-content-flex-end">
-            <img id="imgHover" loading="lazy" src="{{ "images/nrfz_avatar.png" | relURL }}" data-static-src="{{ "images/nrfz_avatar.png" | relURL }}" data-animated-src="{{ "images/nrfz_avatar.gif" | relURL }}" class="avatar" alt="Nurfaiz Foat Photo"></img>
+            <img id="imgHover" loading="eager" decoding="async" width="{{ (resources.Get "images/nrfz_avatar.png").Width }}" height="{{ (resources.Get "images/nrfz_avatar.png").Height }}" src="{{ "images/nrfz_avatar.png" | relURL }}" data-static-src="{{ "images/nrfz_avatar.png" | relURL }}" data-animated-src="{{ "images/nrfz_avatar.gif" | relURL }}" class="avatar" alt="Nurfaiz Foat Photo"></img>
           </figure>
         </div>
         <div class="column">

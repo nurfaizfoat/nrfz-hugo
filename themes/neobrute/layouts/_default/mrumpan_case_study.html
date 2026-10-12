@@ -14,7 +14,7 @@
     </div>
     <div class="column is-mobile is-8">
       <figure class="image">
-        <img loading="lazy" class="is-borderless is-rounded-img has-shadow" loading="lazy" src="../images/mrumpan_grease3in1.jpg?" />
+        {{ partial "image" (dict "src" "images/mrumpan_grease3in1.jpg" "class" "is-borderless is-rounded-img has-shadow" "eager" true "sizes" "(min-width: 769px) 66vw, calc(100vw - 48px)") }}
       </figure>
     </div>
   </div>
@@ -53,7 +53,7 @@
       </div>
       <div class="column">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/mindraypassport8.png?" />
+          {{ partial "image" (dict "src" "images/mindraypassport8.png" "class" "is-borderless is-rounded-img") }}
           <p class="has-text-centered is-dark-grey pt-2">
             <i>MindRay Passport8 Interface</i>
           </p>
@@ -69,7 +69,7 @@
     <div class="columns pt-6 pb-6">
       <div class="column is-one-quarter">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/020_ppum_mobile_view_a.jpg?" />
+          {{ partial "image" (dict "src" "images/020_ppum_mobile_view_a.jpg" "class" "is-borderless is-rounded-img" "sizes" "(min-width: 769px) 33vw, calc(100vw - 48px)") }}
           <p class="has-text-centered is-dark-grey pt-2">
             <i>Mobile View - Vital Sign</i>
           </p>
@@ -77,13 +77,13 @@
       </div>
       <div class="column">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/001_ppum_iot_main_screen.jpg?">
+          {{ partial "image" (dict "src" "images/001_ppum_iot_main_screen.jpg" "class" "is-borderless is-rounded-img" "sizes" "(min-width: 769px) 33vw, calc(100vw - 48px)") }}
           <p class="has-text-centered is-dark-grey pt-2"><i>First HiFi Mockup - Landing Screen</i></p>
         </figure>
       </div>
       <div class="column is-one-quarter">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/021_ppum_mobile_view_b.jpg" />
+          {{ partial "image" (dict "src" "images/021_ppum_mobile_view_b.jpg" "class" "is-borderless is-rounded-img" "sizes" "(min-width: 769px) 33vw, calc(100vw - 48px)") }}
           <p class="has-text-centered is-dark-grey pt-2">
             <i>Mobile View - Viral Graph</i>
           </p>
@@ -94,7 +94,7 @@
     <div class="columns pt-4 pb-4">
       <div class="column">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/015_ppum_device_settings.jpg?" />
+          {{ partial "image" (dict "src" "images/015_ppum_device_settings.jpg" "class" "is-borderless is-rounded-img" "sizes" "(min-width: 769px) 33vw, calc(100vw - 48px)") }}
           <p class="has-text-centered is-dark-grey pt-2">
             <i>Device Setting Page</i>
           </p>
@@ -102,7 +102,7 @@
       </div>
       <div class="column">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/005_ppum_start_case_patient_keyboard.jpg?" />
+          {{ partial "image" (dict "src" "images/005_ppum_start_case_patient_keyboard.jpg" "class" "is-borderless is-rounded-img" "sizes" "(min-width: 769px) 33vw, calc(100vw - 48px)") }}
           <p class="has-text-centered is-dark-grey pt-2">
             <i>On Screen Keyboard for Touch Screen Use Case</i>
           </p>
@@ -110,7 +110,7 @@
       </div>
       <div class="column">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/011_ppum_device_settings_connectivity_stats.jpg?" />
+          {{ partial "image" (dict "src" "images/011_ppum_device_settings_connectivity_stats.jpg" "class" "is-borderless is-rounded-img" "sizes" "(min-width: 769px) 33vw, calc(100vw - 48px)") }}
           <p class="has-text-centered is-dark-grey pt-2">
             <i>Device Connectivity Stats</i>
           </p>
@@ -121,7 +121,7 @@
     <div class="columns pt-4 pb-4">
       <div class="column">
         <figure class="image">
-          <img loading="lazy" class="is-borderless is-rounded-img" src="../images/nexoprima_final_product.jpg?">
+          {{ partial "image" (dict "src" "images/nexoprima_final_product.jpg" "class" "is-borderless is-rounded-img") }}
           <p class="has-text-centered is-dark-grey pt-2"><i>Final Product - Tested on Chrome</i></p>
         </figure>
       </div>

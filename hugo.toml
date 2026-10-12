@@ -5,8 +5,16 @@ theme = 'neobrute'
 homepage = "index"
 disableKinds = ["taxonomy", "term"]
 
+# Expose existing image originals to Hugo's build-time image processor.
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+
+[[module.mounts]]
+source = 'themes/neobrute/static/images'
+target = 'assets/images'
+
 [sitemap]
   changefreq = "monthly"
   priority = 0.5
   filename = "sitemap.xml"
-

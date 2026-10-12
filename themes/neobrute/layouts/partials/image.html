@@ -1,0 +1,30 @@
+{{- /* Local raster images get responsive WebP files and an embedded blur preview.
+     Keep src/srcset real so native lazy loading also works without JavaScript. */ -}}
+{{- $src := .src -}}
+{{- $path := replaceRE `^(\.\./|/)+` "" (replaceRE `[?#].*$` "" $src) -}}
+{{- $image := .resource | default (resources.Get $path) -}}
+{{- $loading := "lazy" -}}
+{{- if .eager }}{{ $loading = "eager" }}{{ end -}}
+{{- $sizes := .sizes | default "(min-width: 1408px) 1296px, (min-width: 1216px) 1104px, (min-width: 1024px) 912px, calc(100vw - 48px)" -}}
+{{- if and $image (in (slice "image/jpeg" "image/png" "image/webp") $image.MediaType.Type) -}}
+  {{- $maxWidth := math.Min $image.Width 1920 | int -}}
+  {{- $widths := slice -}}
+  {{- range slice 480 800 1200 1600 -}}
+    {{- if lt . $maxWidth }}{{ $widths = $widths | append . }}{{ end -}}
+  {{- end -}}
+  {{- $widths = $widths | append $maxWidth -}}
+  {{- $srcset := slice -}}
+  {{- $fallback := $image -}}
+  {{- range $widths -}}
+    {{- $variant := $image.Resize (printf "%dx webp q85" .) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
+    {{- if le . 1200 }}{{ $fallback = $variant }}{{ end -}}
+  {{- end -}}
+  {{- $preview := ($image.Resize "24x webp q20").Filter (images.GaussianBlur 1) -}}
+  {{- /* Hugo 0.132 can retain the original MediaType after Filter, even though
+       the bytes are WebP. Match the data URI to the requested output format. */ -}}
+  {{- $background := printf "background-image: url('data:image/webp;base64,%s');" ($preview.Content | encoding.Base64Encode) -}}
+  <img class="{{ .class }} progressive-image" src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .alt | default "" }}" loading="{{ $loading }}" decoding="async"{{ if .eager }} fetchpriority="high"{{ end }} data-original-src="{{ $image.RelPermalink }}" data-progressive style="{{ $background | safeCSS }}">
+{{- else -}}
+  <img{{ with .class }} class="{{ . }}"{{ end }} src="{{ $src | relURL }}" alt="{{ .alt | default "" }}" loading="{{ $loading }}" decoding="async"{{ if .eager }} fetchpriority="high"{{ end }}{{ if and $image (eq $image.MediaType.Type "image/gif") }} width="{{ $image.Width }}" height="{{ $image.Height }}"{{ end }}>
+{{- end -}}

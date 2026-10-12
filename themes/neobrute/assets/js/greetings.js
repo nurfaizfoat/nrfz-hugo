@@ -15,6 +15,7 @@ function getGreeting() {
 // Function to update the greeting text
 function updateGreeting() {
     const greetingElement = document.getElementById('greeting');
+    if (!greetingElement) return;
     const greetingText = getGreeting();
     const currentYear = new Date().getFullYear();
     greetingElement.innerHTML = `${greetingText}. Thanks for dropping by. This website is designed and coded by yours truly. Open-sourced and forkable on my <a href="https://github.com/nurfaizfoat">GitHub</a> | 2014 - ${currentYear} &#9878; MIT License.`;

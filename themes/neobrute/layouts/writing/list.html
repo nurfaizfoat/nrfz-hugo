@@ -12,10 +12,10 @@
   <div class="container pb-6">
     <p class="has-text-grey pb-5">Essays and notes on product design, startups and building things &mdash; originally published on <a class="is-dark-grey" href="https://medium.com/@nurfaizfoat" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
     <div class="columns is-multiline">
-      {{ range .Pages.ByDate.Reverse }}
+      {{ range $index, $page := .Pages.ByDate.Reverse }}
       <div class="column is-one-third-desktop is-half-tablet">
         <a class="writing-card" href="{{ .RelPermalink }}">
-          {{ with .Params.hero }}<img loading="lazy" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+          {{ with .Params.hero }}{{ partial "image" (dict "src" . "alt" $page.Title "eager" (eq $index 0) "sizes" "(min-width: 1024px) 33vw, (min-width: 769px) 50vw, calc(100vw - 48px)") }}{{ end }}
           <div class="writing-card-body">
             <p class="writing-meta has-text-grey is-size-7">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</p>
             <h4 class="is-size-5 sawarabi-mincho-regular is-dark-grey pt-2">{{ .Title }}</h4>

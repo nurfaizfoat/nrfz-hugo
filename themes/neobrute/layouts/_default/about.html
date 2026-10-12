@@ -35,11 +35,11 @@
                 </div>
                 <div class="image-container">
                     <figure class="image" id="weekdays-image" style="opacity: 1;">
-                        <img loading="lazy" class="is-borderless is-rounded-img" src="../images/jomlaunch_2017.jpg?"/>
+                        {{ partial "image" (dict "src" "images/jomlaunch_2017.jpg" "class" "is-borderless is-rounded-img" "alt" "Presenting a project at JomLaunch 2017" "eager" true "sizes" "(min-width: 769px) 50vw, calc(100vw - 48px)") }}
                         <p class="has-text-centered is-dark-grey pt-2"><i>Presenting a project at JomLaunch 2017</i></p>
                     </figure>
                     <figure class="image" id="weekends-image" style="opacity: 0;">
-                        <img loading="lazy" class="is-borderless is-rounded-img" src="../images/weekend_trip.jpg?"/>
+                        {{ partial "image" (dict "src" "images/weekend_trip.jpg" "class" "is-borderless is-rounded-img" "alt" "Enjoying a weekend fishing trip" "sizes" "(min-width: 769px) 50vw, calc(100vw - 48px)") }}
                         <p class="has-text-centered is-dark-grey pt-2"><i>Enjoying the weekend</i></p>
                     </figure>
                 </div>
@@ -136,17 +136,17 @@
         <div class="container mt-3">
             <div class="columns is-hidden-mobile is-2">
                 <div class="column has-text-centered">
-                    <a href="https://almondine-work-25b.notion.site/Grab-Product-Designer-34f74727e8e480129a1efa2ab949cd56?source=copy_link" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/grab_logo.svg" alt="Grab Logo"></a>
+                    <a href="https://almondine-work-25b.notion.site/Grab-Product-Designer-34f74727e8e480129a1efa2ab949cd56?source=copy_link" target="_blank" rel="noopener noreferrer" class="work-logo" data-thumb="{{ "images/work_thumbs/grab.jpg" | relURL }}" data-title="Grab Food Delivery Driver App" data-excerpt="Designing a food-delivery driver app, from stakeholder mapping and user journeys to high-fidelity mobile screens."><img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/grab_logo.svg" alt="Grab Logo"></a>
                     <p class="has-text-grey"><i>November 2018</i></p>
                 </div>
                 <div class="column has-text-centered">
-                    <a href="https://almondine-work-25b.notion.site/Gumroad-Tipping-Coffee-Feature-890577350f584465991ce5ffe847d3c9?pvs=74" target="_blank" rel="noopener noreferrer">
+                    <a href="https://almondine-work-25b.notion.site/Gumroad-Tipping-Coffee-Feature-890577350f584465991ce5ffe847d3c9?pvs=74" target="_blank" rel="noopener noreferrer" class="work-logo" data-thumb="{{ "images/work_thumbs/gumroad.jpg" | relURL }}" data-title="Gumroad Coffee Tipping Feature" data-excerpt="Exploring a simple Coffee tipping experience that lets customers support creators directly from their storefront.">
                         <img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/gumroad_logo.svg" alt="Gumroad Logo">
                     </a>
                     <p class="has-text-grey"><i>January 2024</i></p>
                 </div>
                 <div class="column has-text-centered">
-                    <a href="https://almondine-work-25b.notion.site/CoffeeSpace-AI-Interview-33074727e8e480fc81b8de4915b14a56?pvs=74" target="_blank" rel="noopener noreferrer">
+                    <a href="https://almondine-work-25b.notion.site/CoffeeSpace-AI-Interview-33074727e8e480fc81b8de4915b14a56?pvs=74" target="_blank" rel="noopener noreferrer" class="work-logo" data-thumb="{{ "images/work_thumbs/coffeespace.jpg" | relURL }}" data-title="CoffeeSpace AI Interview" data-excerpt="Shaping a guided AI interview and talent profile experience, from early research to high-fidelity desktop mockups.">
                         <img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/coffeespace_logo.svg" alt="CoffeeSpace Logo">
                     </a>
                     <p class="has-text-grey"><i>March 2026</i></p>
@@ -156,13 +156,13 @@
         <div class="container mt-3">
             <div class="columns is-hidden-tablet is-mobile">
                 <div class="column has-text-centered">
-                    <a href="https://almondine-work-25b.notion.site/Grab-Product-Designer-34f74727e8e480129a1efa2ab949cd56?source=copy_link" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/grab_logo.svg" alt="Grab Logo"></a>
+                    <a href="https://almondine-work-25b.notion.site/Grab-Product-Designer-34f74727e8e480129a1efa2ab949cd56?source=copy_link" target="_blank" rel="noopener noreferrer" class="work-logo" data-thumb="{{ "images/work_thumbs/grab.jpg" | relURL }}" data-title="Grab Food Delivery Driver App" data-excerpt="Designing a food-delivery driver app, from stakeholder mapping and user journeys to high-fidelity mobile screens."><img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/grab_logo.svg" alt="Grab Logo"></a>
                     <p class="has-text-grey"><i>May 2019</i></p>
                 </div>
             </div>
             <div class="columns is-hidden-tablet is-mobile">
                 <div class="column has-text-centered">
-                    <a href="https://almondine-work-25b.notion.site/Gumroad-Tipping-Coffee-Feature-890577350f584465991ce5ffe847d3c9?pvs=74" target="_blank" rel="noopener noreferrer">
+                    <a href="https://almondine-work-25b.notion.site/Gumroad-Tipping-Coffee-Feature-890577350f584465991ce5ffe847d3c9?pvs=74" target="_blank" rel="noopener noreferrer" class="work-logo" data-thumb="{{ "images/work_thumbs/gumroad.jpg" | relURL }}" data-title="Gumroad Coffee Tipping Feature" data-excerpt="Exploring a simple Coffee tipping experience that lets customers support creators directly from their storefront.">
                         <img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/gumroad_logo.svg" alt="Gumroad Logo">
                     </a>
                     <p class="has-text-grey"><i>January 2024</i></p>
@@ -170,7 +170,7 @@
             </div>
             <div class="columns is-hidden-tablet is-mobile">
                 <div class="column has-text-centered">
-                    <a href="https://almondine-work-25b.notion.site/CoffeeSpace-AI-Interview-33074727e8e480fc81b8de4915b14a56?pvs=74" target="_blank" rel="noopener noreferrer">
+                    <a href="https://almondine-work-25b.notion.site/CoffeeSpace-AI-Interview-33074727e8e480fc81b8de4915b14a56?pvs=74" target="_blank" rel="noopener noreferrer" class="work-logo" data-thumb="{{ "images/work_thumbs/coffeespace.jpg" | relURL }}" data-title="CoffeeSpace AI Interview" data-excerpt="Shaping a guided AI interview and talent profile experience, from early research to high-fidelity desktop mockups.">
                         <img loading="lazy" class="is-borderless mb-2 hoverable-image" src="../images/coffeespace_logo.svg" alt="CoffeeSpace Logo">
                     </a>
                     <p class="has-text-grey"><i>March 2026</i></p>

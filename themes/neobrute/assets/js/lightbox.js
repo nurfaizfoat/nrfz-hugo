@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function open(img) {
     lastFocused = document.activeElement;
-    overlayImg.src = img.currentSrc || img.src;
+    overlayImg.src = img.dataset.originalSrc || img.currentSrc || img.src;
     overlayImg.alt = img.alt || "";
     var caption = getCaption(img);
     overlayCaption.textContent = caption;

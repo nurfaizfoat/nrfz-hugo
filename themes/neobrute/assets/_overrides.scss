@@ -290,6 +290,16 @@ a:hover .perfect-internet-logo {
   border: 1.5px solid $color-white; /* Updated border width */
 }
 
+.progressive-image {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.is-image-loaded {
+    background-image: none !important;
+  }
+}
+
 .perfect-case-image {
   display: block;
   width: 100%;

@@ -1,0 +1,2 @@
+{{- $resource := .Page.Resources.GetMatch .Destination -}}
+{{- partial "image" (dict "src" .Destination "resource" $resource "alt" .PlainText "eager" (eq .Ordinal 0) "sizes" "(min-width: 1408px) 1080px, (min-width: 1216px) 920px, (min-width: 1024px) 760px, calc(100vw - 48px)") -}}
