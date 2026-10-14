@@ -1,6 +1,8 @@
 {{- $defaultDesc := "I'm Nurfaiz Foat, a Senior Product Designer in Malaysia, specializing in impactful designs that deliver optimal results for businesses." -}}
 {{- $defaultImg := "/images/og_nurfaizfoat.png" -}}
 {{- $isWriting := eq .Section "writing" -}}
+{{- $isCaseStudy := hasSuffix .Type "_case_study" -}}
+{{- $isArticle := and (or $isWriting $isCaseStudy) .IsPage -}}
 
 {{- $title := "" -}}
 {{- if .IsHome -}}
@@ -15,7 +17,8 @@
 
 {{- $img := .Params.og_image | default (.Params.hero | default $defaultImg) -}}
 {{- $imgAbs := $img | absURL -}}
-{{- $type := cond (and $isWriting .IsPage) "article" "website" -}}
+{{- $imgAlt := .Params.og_image_alt | default .Title -}}
+{{- $type := cond $isArticle "article" "website" -}}
 
 <!-- Primary Meta Tags -->
 <meta name="description" content="{{ $desc }}">
@@ -27,13 +30,22 @@
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:image" content="{{ $imgAbs }}">
-<meta property="og:image:alt" content="{{ .Title }}">
+<meta property="og:image:alt" content="{{ $imgAlt }}">
 {{- with .Params.og_image }}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 {{- end }}
-{{- if and $isWriting .IsPage }}
+{{- if $isArticle }}
+{{- if not .Date.IsZero }}
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- if not .Lastmod.IsZero }}
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- with .Section }}
+<meta property="article:section" content="{{ . }}">
+{{- end }}
 {{- end }}
 
 <!-- Twitter -->
@@ -41,3 +53,4 @@
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:description" content="{{ $desc }}">
 <meta name="twitter:image" content="{{ $imgAbs }}">
+<meta name="twitter:image:alt" content="{{ $imgAlt }}">

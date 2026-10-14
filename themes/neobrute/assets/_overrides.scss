@@ -182,11 +182,47 @@ a {
   }
 }
 
-.avatar {
-  width: auto;
-  padding: 0;
+.asterisk-logo {
+  transform-origin: center;
+  animation: asterisk-spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes asterisk-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .asterisk-logo:hover {
+    animation-play-state: running;
+  }
+}
+
+.avatar-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(64px, 7vw, 96px);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(110deg, #ff252e 0%, #ff853b 100%);
   border: 2px solid $color-black;
-  border-radius: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar {
+  display: block;
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  transition: transform 100ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar {
+    transition: none;
+  }
 }
 
 .separator-bar {
@@ -260,6 +296,20 @@ a {
   }
 }
 
+.github-tooltip {
+  width: 460px;
+  max-width: calc(100vw - 28px);
+  padding: 16px;
+  color: $color-black;
+  pointer-events: auto;
+
+  .github-tooltip-title { font-size: 0.875rem; font-weight: 600; }
+  .github-tooltip-status { margin: 6px 0 12px; font-size: 0.75rem; line-height: 1.5; }
+  .github-tooltip-chart svg { display: block; width: 100%; height: auto; }
+  .github-tooltip-chart:empty { display: none; }
+  .github-tooltip-note { margin-top: 10px; font-size: 0.65rem; color: $color-text; }
+}
+
 .perfect-internet-logo-column {
   display: flex;
   align-items: center;
@@ -283,6 +333,56 @@ a {
 
 a:hover .perfect-internet-logo {
   background-color: rgb(49, 90, 168);
+}
+
+// Mobile entrypoints reuse the hover-preview card treatment.
+@media screen and (max-width: 768px) {
+  .selected-work-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .selected-work-card {
+    display: block;
+    min-width: 0;
+    padding: 10px;
+    background: $color-white;
+    border: 2px solid $color-black;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    color: $color-black;
+
+    &:focus-visible {
+      outline: 3px solid $color-text;
+      outline-offset: 3px;
+    }
+  }
+
+  .selected-work-card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid $color-black;
+  }
+
+  .selected-work-card-title {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .selected-work-card-excerpt {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
 }
 
 .is-white-line {
@@ -311,6 +411,140 @@ a:hover .perfect-internet-logo {
   border-left: 4px solid #315AA8;
   background-color: $color-white;
   color: $color-text;
+}
+
+// MR. UMPAN: a readable founder story with lightweight, on-demand video embeds.
+.mrumpan-case-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mrumpan-story {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    font-family: $font-secondary;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+
+  h3 {
+    margin: 1.75rem 0 0.75rem;
+    font-family: $font-secondary;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p { margin-bottom: 1.25rem; }
+  strong { color: $color-text; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: 0.75rem; }
+  a { text-decoration: underline; text-underline-offset: 3px; }
+  figcaption { margin-top: 0.75rem; font-size: 0.85rem; line-height: 1.6; }
+  .case-photo { margin: 2rem 0; }
+  .case-photo-compact { max-width: 560px; margin-inline: auto; }
+
+  .case-sources ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+.mrumpan-product-row {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding-block: 2rem;
+  border-bottom: 1px solid $color-border;
+
+  .mrumpan-product-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mrumpan-product-copy h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .mrumpan-product-copy p:last-child { margin-bottom: 0; }
+}
+
+.mrumpan-lessons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem 2rem;
+
+  .mrumpan-lesson {
+    padding: 1.5rem;
+    background: $color-white;
+    border: 1px solid $color-black;
+    border-radius: 10px;
+  }
+
+  h3 {
+    margin: 0 0 0.75rem;
+    font-family: $font-primary;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  p { margin: 0; font-size: 1rem; line-height: 1.65; }
+}
+
+.case-video { min-width: 0; margin: 2rem 0; }
+.case-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.case-video-square { max-width: 560px; margin-inline: auto; }
+.case-video-square .case-video-player { aspect-ratio: 1 / 1; }
+
+.case-video-player {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  overflow: hidden;
+  background: $color-dark-bg;
+  border: 2px solid $color-black;
+  border-radius: 10px;
+
+  .case-video-poster, iframe {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mrumpan-story { font-size: 1rem; }
+  .mrumpan-product-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    .mrumpan-product-figure { width: 100%; max-width: 320px; margin-inline: auto; }
+  }
+  .mrumpan-lessons { grid-template-columns: 1fr; }
+  .case-video-grid { grid-template-columns: 1fr; }
 }
 
 // Lightbox

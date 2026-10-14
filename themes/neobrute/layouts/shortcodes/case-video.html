@@ -1,0 +1,22 @@
+{{ $provider := .Get "provider" }}
+{{ $id := .Get "id" }}
+{{ $title := .Get "title" }}
+{{ $providerName := "Facebook" }}
+{{ $source := "" }}
+{{ $embed := "" }}
+{{ if eq $provider "youtube" }}
+  {{ $providerName = "YouTube" }}
+  {{ $source = printf "https://www.youtube.com/watch?v=%s" $id }}
+  {{ $embed = printf "https://www.youtube-nocookie.com/embed/%s?playsinline=1&rel=0" $id }}
+{{ else if eq $provider "facebook" }}
+  {{ $source = printf "https://www.facebook.com/misterumpan/videos/%s/" $id }}
+  {{ $embed = printf "https://www.facebook.com/plugins/video.php?href=%s&show_text=false&width=560" ($source | urlquery) }}
+{{ else }}
+  {{ errorf "Unsupported case-video provider: %s" $provider }}
+{{ end }}
+<figure class="case-video{{ if eq (.Get "square") "true" }} case-video-square{{ end }}">
+  <div class="case-video-player">
+    {{ partial "image" (dict "src" (.Get "poster") "class" "case-video-poster" "alt" (printf "Video preview: %s" $title) "sizes" "(min-width: 769px) 50vw, calc(100vw - 48px)") }}
+  </div>
+  <figcaption><strong>{{ $title }}</strong><p>{{ .Get "caption" }}</p><a class="case-video-load" href="{{ $source }}" data-video-src="{{ $embed }}" data-video-title="{{ $title }}" target="_blank" rel="noopener noreferrer">Watch on {{ $providerName }} ↗</a></figcaption>
+</figure>

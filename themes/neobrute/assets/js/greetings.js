@@ -4,11 +4,11 @@ function getGreeting() {
     const hours = now.getHours();
 
     if (hours >= 5 && hours < 12) {
-        return "&#127748; Good morning";
+        return "🌄 Good morning";
     } else if (hours >= 12 && hours < 18) {
-        return "&#9925; Good afternoon";
+        return "⛅ Good afternoon";
     } else {
-        return "&#127747; Good evening";
+        return "🌃 Good evening";
     }
 }
 
@@ -16,9 +16,10 @@ function getGreeting() {
 function updateGreeting() {
     const greetingElement = document.getElementById('greeting');
     if (!greetingElement) return;
-    const greetingText = getGreeting();
-    const currentYear = new Date().getFullYear();
-    greetingElement.innerHTML = `${greetingText}. Thanks for dropping by. This website is designed and coded by yours truly. Open-sourced and forkable on my <a href="https://github.com/nurfaizfoat">GitHub</a> | 2014 - ${currentYear} &#9878; MIT License.`;
+    const greetingText = greetingElement.querySelector('[data-greeting-text]');
+    const greetingYear = greetingElement.querySelector('[data-greeting-year]');
+    if (greetingText) greetingText.textContent = getGreeting();
+    if (greetingYear) greetingYear.textContent = new Date().getFullYear();
 }
 
 // Call the updateGreeting function when the page loads

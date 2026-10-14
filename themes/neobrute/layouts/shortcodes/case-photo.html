@@ -1,0 +1,4 @@
+<figure class="case-photo{{ if eq (.Get "compact") "true" }} case-photo-compact{{ end }}">
+  {{ partial "image" (dict "src" (.Get "src") "class" "is-rounded-img mrumpan-case-image" "alt" (.Get "alt")) }}
+  <figcaption>{{ .Get "caption" }}{{ with .Get "source" }} <a href="{{ . }}" target="_blank" rel="noopener noreferrer">View original on Facebook</a>.{{ end }}</figcaption>
+</figure>

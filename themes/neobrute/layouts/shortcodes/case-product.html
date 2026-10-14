@@ -1,0 +1,10 @@
+<section class="mrumpan-product-row" aria-labelledby="{{ .Get "title" | anchorize }}">
+  <figure class="mrumpan-product-figure">
+    {{ partial "image" (dict "src" (.Get "src") "class" "is-rounded-img mrumpan-product-image" "alt" (.Get "alt") "sizes" "(min-width: 769px) 320px, calc(100vw - 64px)") }}
+    <figcaption>{{ .Get "caption" }}{{ with .Get "source" }} <a href="{{ . }}" target="_blank" rel="noopener noreferrer">View original</a>.{{ end }}</figcaption>
+  </figure>
+  <div class="mrumpan-product-copy">
+    <h3 id="{{ .Get "title" | anchorize }}">{{ .Get "title" }}</h3>
+    {{ .Page.RenderString (dict "display" "block") .Inner }}
+  </div>
+</section>

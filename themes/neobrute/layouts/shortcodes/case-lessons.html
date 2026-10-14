@@ -1,0 +1,8 @@
+<div class="mrumpan-lessons">
+  {{ range .Page.Params.lessons }}
+  <section class="mrumpan-lesson">
+    <h3>{{ .title }}</h3>
+    <p>{{ .text }}</p>
+  </section>
+  {{ end }}
+</div>
