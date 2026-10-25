@@ -9,6 +9,15 @@ $color-text: #404654;
 $color-border: #ccc;
 $color-active: rgb(255, 0, 0);
 
+// Bulma derives its links, focus rings, tab borders and selected states from
+// these variables. Point them at the site accent (red) so no default blue
+// leaks into hover, focus or active states anywhere on the site.
+:root {
+  --bulma-link-h: 0deg;
+  --bulma-link-s: 100%;
+  --bulma-link-l: 50%;
+}
+
 // Mixins
 @mixin button-styles {
   font-size: 16px;
@@ -57,6 +66,36 @@ body {
   100% {
       opacity: 1;
   }
+}
+
+// Remove the browser's default blue/grey tap flash on mobile.
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Replace the default blue text selection with the site palette.
+::selection {
+  background-color: $color-black;
+  color: $color-background;
+  -webkit-text-fill-color: $color-background;
+}
+
+// Keep keyboard focus visible, but use the theme's colors instead of the browser blue.
+// currentColor stays readable on both the light and dark pages.
+:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+// Clicking or tapping should not leave a lingering focus ring behind.
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 // Utility classes
@@ -730,6 +769,27 @@ body.lightbox-open {
   width: auto; // Let the content determine the width
   text-align: center; // Center the text
   white-space: nowrap; // Prevent wrapping
+}
+
+// Bulma tints hovered/selected navbar items with its default blue link hue.
+// The site has no blue in its palette, so keep those states transparent.
+.navbar {
+  --bulma-navbar-item-background-a: 0;
+  --bulma-navbar-item-hover-background-l-delta: 0%;
+  --bulma-navbar-item-active-background-l-delta: 0%;
+}
+
+a.navbar-item,
+.navbar-item,
+.navbar-link {
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active,
+  &.is-active,
+  &.is-selected {
+    background-color: transparent;
+  }
 }
 
 // Specific styling for the active state
