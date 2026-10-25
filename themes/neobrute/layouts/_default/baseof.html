@@ -1,10 +1,11 @@
+{{- $isCaseStudy := or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") (eq .Type "supahandswp_case_study") (eq .Type "nexoprima_case_study") (eq .Type "mrumpan_case_study") (eq .Type "perfect_internet_case_study") -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" class="{{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") (eq .Type "supahandswp_case_study") (eq .Type "nexoprima_case_study") (eq .Type "mrumpan_case_study") (eq .Type "perfect_internet_case_study") }}is-global-dark-bg{{ else }}default{{ end }}">
+<html lang="{{ .Site.Language.Lang }}" class="{{ if $isCaseStudy }}is-global-dark-bg{{ else }}default{{ end }}">
 <head>
   {{ partial "htmlhead" . }}
 </head>
-<body class="{{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") (eq .Type "supahandswp_case_study") (eq .Type "nexoprima_case_study") (eq .Type "mrumpan_case_study") (eq .Type "perfect_internet_case_study") }}case-study-body{{ end }}">
-  {{ if or (eq .Type "supahands_case_study") (eq .Type "lelong_case_study") (eq .Type "ookyo_case_study") (eq .Type "supahandswp_case_study") (eq .Type "nexoprima_case_study") (eq .Type "mrumpan_case_study") (eq .Type "perfect_internet_case_study") }}
+<body class="{{ if $isCaseStudy }}case-study-body{{ end }}">
+  {{ if $isCaseStudy }}
     {{ partial "header_case_study.html" . }}
   {{ else }}
     {{ partial "header.html" . }}
@@ -16,6 +17,10 @@
 
   {{ if site.Params.footer }}
     {{ partial "footer" . }}
+  {{ end }}
+
+  {{ if $isCaseStudy }}
+    {{ partial "floating_menu" . }}
   {{ end }}
 
   {{ template "_internal/google_analytics.html" . }}
