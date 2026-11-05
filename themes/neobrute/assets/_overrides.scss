@@ -966,16 +966,102 @@ a.navbar-item,
 }
 
 .writing-body {
+  h2,
   h3,
   h4 {
+    position: relative;
     font-family: $font-secondary;
-    line-height: 1.4;
-    margin: 1.75rem 0 0.75rem;
+    line-height: 1.35;
+    color: $color-text;
+    -webkit-text-fill-color: $color-text;
+
+    > a {
+      position: absolute;
+      left: -1.15em;
+      top: 0;
+      width: 1.15em;
+      color: $color-active;
+      -webkit-text-fill-color: $color-active;
+      opacity: 0;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    &:hover > a,
+    > a:focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 2.6rem 0 0.9rem;
+  }
+
+  h3 {
+    font-size: 1.55rem;
+    margin: 2.1rem 0 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    margin: 1.75rem 0 0.65rem;
   }
 
   p {
     margin-bottom: 1.1rem;
     line-height: 1.75;
+  }
+
+  pre {
+    margin: 1.35rem 0 1.6rem;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    background: #272822;
+    color: #f8f8f2;
+    -webkit-text-fill-color: currentColor;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  pre * {
+    -webkit-text-fill-color: currentColor;
+  }
+
+  code {
+    font-family: "iA Writer Duospace", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.9em;
+  }
+
+  :not(pre) > code {
+    padding: 0.12em 0.4em;
+    border-radius: 4px;
+    background-color: $color-dark-bg;
+    color: $color-background;
+    -webkit-text-fill-color: $color-background;
+    white-space: break-spaces;
+  }
+
+  .highlight {
+    margin: 1.35rem 0 1.6rem;
+    overflow: hidden;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    background: #272822;
+  }
+
+  .highlight pre {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .highlight code {
+    padding: 0;
+    background: transparent;
   }
 
   img {

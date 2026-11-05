@@ -4,33 +4,36 @@
     <div class="column">
       <p class="has-text-grey-light has-text-left"><i class="fa-solid fa-caret-left"></i> Previous</p>
       <p class="has-text-left">
-        {{$currentPage := .RelPermalink}}
-        {{$pages := slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study"}}
-        {{$shuffledPages := shuffle $pages}}
-        {{$filteredPages := where $shuffledPages "RelPermalink" "!=" $currentPage}}
-        {{$previousPage := index $filteredPages 0}}
-        <a href="{{ $previousPage | relURL }}">
-          {{ if eq $previousPage "lelong_case_study" }}Lelong.my Case Study
-          {{ else if eq $previousPage "ookyo_case_study" }}Ookyo Case Study
-          {{ else if eq $previousPage "supahands_case_study" }}Supahands Case Study
-          {{ else if eq $previousPage "mrumpan_case_study" }}Mr. Umpan Case Study
-          {{ else if eq $previousPage "nexoprima_case_study" }}Nexoprima Case Study
-          {{ end }}
-        </a>
+        {{ $currentType := .Type }}
+        {{ $pages := slice "lelong_case_study" "ookyo_case_study" "supahands_case_study" "supahandswp_case_study" "nexoprima_case_study" }}
+        {{ $labels := dict
+          "lelong_case_study" "Lelong.my Case Study"
+          "ookyo_case_study" "Ookyo Case Study"
+          "supahands_case_study" "Supahands Case Study"
+          "supahandswp_case_study" "Supahands Workplace Case Study"
+          "nexoprima_case_study" "Nexoprima Case Study"
+        }}
+        {{ $currentIndex := -1 }}
+        {{ range $index, $slug := $pages }}
+          {{ if eq $slug $currentType }}{{ $currentIndex = $index }}{{ end }}
+        {{ end }}
+        {{ $previousPage := index $pages 0 }}
+        {{ $nextPage := index $pages 1 }}
+        {{ if ge $currentIndex 0 }}
+          {{ $previousIndex := sub $currentIndex 1 }}
+          {{ if lt $previousIndex 0 }}{{ $previousIndex = sub (len $pages) 1 }}{{ end }}
+          {{ $nextIndex := add $currentIndex 1 }}
+          {{ if ge $nextIndex (len $pages) }}{{ $nextIndex = 0 }}{{ end }}
+          {{ $previousPage = index $pages $previousIndex }}
+          {{ $nextPage = index $pages $nextIndex }}
+        {{ end }}
+        <a href="{{ $previousPage | relURL }}">{{ index $labels $previousPage }}</a>
       </p>
     </div>
     <div class="column">
       <p class="has-text-grey-light has-text-right">Next <i class="fa-solid fa-caret-right"></i></p>
       <p class="has-text-right">
-        {{$nextPage := index $filteredPages 1}}
-        <a href="{{ $nextPage | relURL }}">
-          {{ if eq $nextPage "lelong_case_study" }}Lelong.my Case Study
-          {{ else if eq $nextPage "ookyo_case_study" }}Ookyo Case Study
-          {{ else if eq $nextPage "supahands_case_study" }}Supahands Case Study
-          {{ else if eq $nextPage "supahandswp_case_study" }}Supahands Workplace Case Study
-          {{ else if eq $nextPage "nexoprima_case_study" }}Nexoprima Case Study
-          {{ end }}
-        </a>
+        <a href="{{ $nextPage | relURL }}">{{ index $labels $nextPage }}</a>
       </p>
     </div>
   </div>
